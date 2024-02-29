@@ -1,0 +1,78 @@
+.related-content {
+    a {
+        @include hover {
+            color: var(--c-accent);
+        }
+    }
+}
+
+/*  |> Video cover
+——————————————————————————————————————————————————————*/
+.wg-video-cover {
+    position: relative;
+
+    &__embed {
+        position: relative;
+
+        &:before {
+            display: block;
+            content: "";
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        right: 1rem;
+        top: 0.8rem;
+        color: white;
+        --size: 1.6rem;
+    }
+
+}
+
+/*————————————————————————————————————————————————————*\
+    ●❱ Ad Widget
+\*————————————————————————————————————————————————————*/
+
+.wg-ad {
+    object-fit: cover;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+
+    @include m_query($bp-lg, 'min') {
+        // height: 100%;
+    }
+}
+
+/*————————————————————————————————————————————————————*\
+    ●❱ Youtube Playlist Widget
+\*————————————————————————————————————————————————————*/
+
+.youtube-box {
+    @include m_query($bp-lg) {
+        .card-video {
+            align-items: center;
+        }
+
+        .card-video__img-wrp {
+            max-width: 170px;
+        }
+
+        .card-video__img {
+            position: static;
+        }
+    }
+}
