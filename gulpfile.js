@@ -259,7 +259,7 @@ function js_vendors() {
 function js_custom() {
 
     const customs = [
-        config.path_source_js + 'main.js',
+        config.path_source_js + 'index.js',
     ]
 
     return gulp.src(customs)
