@@ -41,8 +41,8 @@ const { series } = require("gulp");
 \*————————————————————————————————————————————————————*/
 
 const config = {
-    urlBrowserSync: "straighline.local",
-    slug_theme: "Straighline",
+    urlBrowserSync: "start-theme.local",
+    slug_theme: "Start Theme",
     BrowserList: "last 1 versions",
     pathIconsOrigin: "assets/icons/", //Does not work with sub directories
     pathExportIconsSheet: "assets/scss/base/",
