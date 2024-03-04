@@ -41,11 +41,11 @@ const { series } = require("gulp");
 \*————————————————————————————————————————————————————*/
 
 const config = {
-    urlBrowserSync: "starter.local",
+    urlBrowserSync: "starter-theme.local",
     slug_theme: "start-theme",
     BrowserList: "last 1 versions",
     pathIconsOrigin: "assets/icons/", //Does not work with sub directories
-    pathExportIconsSheet: "assets/scss/base/",
+    pathExportIconsSheet: "assets/sass/base/elements/",
     clean_css: true,
     path_source_js: "assets/js/",
     path_dist_js: "assets/js/",
@@ -75,7 +75,7 @@ function css() {
     };
 
     return gulp
-        .src("assets/scss/style.scss")
+        .src("assets/sass/style.scss")
         .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass().on("error", sass.logError))
@@ -86,11 +86,11 @@ function css() {
         .pipe(browserSync.stream())
 }
 
-/*  |> SCSS - auto import
+/*  |> SASS - auto import
 ——————————————————————————————————————————————————————*/
 
 let concatOptions = {
-    root: "./assets/scss/",
+    root: "./assets/sass/",
     prepend: "@import '",
     append: "';",
 };
@@ -101,9 +101,9 @@ let concatOptions = {
 
 function scssSite() {
     return gulp
-        .src("assets/scss/site/*.*")
+        .src("assets/sass/site/*.*")
         .pipe(concatFilenames("_site.scss", concatOptions))
-        .pipe(gulp.dest("./assets/scss"));
+        .pipe(gulp.dest("./assets/sass"));
 }
 
 /*
@@ -112,21 +112,21 @@ function scssSite() {
 
 function scssBlocks() {
     return gulp
-        .src("assets/scss/blocks/*.*")
+        .src("assets/sass/components/blocks/*.*")
         .pipe(concatFilenames("_blocks.scss", concatOptions))
-        .pipe(gulp.dest("./assets/scss"));
+        .pipe(gulp.dest("./assets/sass"));
 }
 
 /*
 ——— For Flexible content with ACF
 */
 
-function scssComponents() {
-    return gulp
-        .src("assets/scss/components/*.*")
-        .pipe(concatFilenames("_components.scss", concatOptions))
-        .pipe(gulp.dest("./assets/scss"));
-}
+// function scssComponents() {
+//     return gulp
+//         .src("assets/sass/blocks/*.*")
+//         .pipe(concatFilenames("_blocks.scss", concatOptions))
+//         .pipe(gulp.dest("./assets/sass"));
+// }
 
 /*  |> Icons
 ——————————————————————————————————————————————————————*/
@@ -292,11 +292,11 @@ function js_custom() {
     ●❱ MAIN TASK
 \*————————————————————————————————————————————————————*/
 
-exports.default = gulp.series(gulp.parallel(scssSite, scssBlocks, scssComponents, iconSh, js_custom), css, initAll);
+exports.default = gulp.series(gulp.parallel(scssSite, scssBlocks, iconSh, js_custom), css, initAll);
 
 function initAll() {
 
-    let path_scss = "assets/scss/";
+    let path_scss = "assets/sass/";
 
     browserSync.init({
         //logLevel: "info",
@@ -313,9 +313,9 @@ function initAll() {
     gulp.watch(["assets/**/blocks/*.scss"], {
         events: ['add', 'unlink']
     }, scssBlocks);
-    gulp.watch(["assets/**/components/*.scss"], {
-        events: ['add', 'unlink']
-    }, scssComponents);
+    // gulp.watch(["assets/**/blocks/*.scss"], {
+    //     events: ['add', 'unlink']
+    // }, scssComponents);
 
     gulp.watch(["assets/icons/*.svg"], iconSh);
 
@@ -325,7 +325,7 @@ function initAll() {
         [
             path_scss + "**/*.scss",
             "!" + path_scss + "**/_site.scss",
-            "!" + path_scss + "**/_components.scss",
+            "!" + path_scss + "**/_blocks.scss",
             "!" + path_scss + "**/_blocks.scss",
         ],
         css
