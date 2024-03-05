@@ -40,18 +40,20 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 --------------------------------------------------------------*/
 
-// Import variables and mixins.
-@import "abstracts/abstracts";
-
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
+
+/* Variables and mixins.
+--------------------------------------------- */
+@import "abstracts/abstracts";
 
 /* Normalize
 --------------------------------------------- */
 @import "generic/normalize";
 @import "generic/root";
 @import "generic/reboot";
+
 
 /* Box sizing
 --------------------------------------------- */
@@ -78,18 +80,11 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-@import "plugins/woocommerce/checkout";
-@import "plugins/woocommerce/components";
-@import "plugins/woocommerce/products";
-@import "plugins/woocommerce/single-product";
-@import "plugins/woocommerce/tables";
-@import "plugins/woocommerce/widgets";
 
-/*--------------------------------------------------------------
-# Vendor
---------------------------------------------------------------*/
-@import "vendor/interpolete";
-@import "vendor/swiper-bundle";
+/* Vendor
+--------------------------------------------- */
+@import "plugins/vendor/swiper-bundle";
+
 
 /*--------------------------------------------------------------
 # Utilities

@@ -41,7 +41,7 @@ const { series } = require("gulp");
 \*————————————————————————————————————————————————————*/
 
 const config = {
-    urlBrowserSync: "start-theme.local",
+    urlBrowserSync: "starter-theme.local",
     slug_theme: "start-theme",
     BrowserList: "last 1 versions",
     pathIconsOrigin: "assets/icons/", //Does not work with sub directories
@@ -110,12 +110,12 @@ function scssSite() {
 ——— For Gutenberg Blocks with ACF
 */
 
-function scssBlocks() {
-    return gulp
-        .src("assets/sass/components/blocks/*.*")
-        .pipe(concatFilenames("_blocks.scss", concatOptions))
-        .pipe(gulp.dest("./assets/sass"));
-}
+// function scssBlocks() {
+//     return gulp
+//         .src("assets/sass/components/blocks/*.*")
+//         .pipe(concatFilenames("_blocks.scss", concatOptions))
+//         .pipe(gulp.dest("./assets/sass/components/blocks/"));
+// }
 
 /*
 ——— For Flexible content with ACF
@@ -292,7 +292,7 @@ function js_custom() {
     ●❱ MAIN TASK
 \*————————————————————————————————————————————————————*/
 
-exports.default = gulp.series(gulp.parallel(scssSite, scssBlocks, iconSh, js_custom), css, initAll);
+exports.default = gulp.series(gulp.parallel(scssSite, iconSh, js_custom), css, initAll);
 
 function initAll() {
 
@@ -310,9 +310,9 @@ function initAll() {
     gulp.watch(["assets/**/site/*.scss"], {
         events: ['add', 'unlink']
     }, scssSite);
-    gulp.watch(["assets/**/blocks/*.scss"], {
-        events: ['add', 'unlink']
-    }, scssBlocks);
+    // gulp.watch(["assets/**/blocks/*.scss"], {
+    //     events: ['add', 'unlink']
+    // }, scssBlocks);
     // gulp.watch(["assets/**/blocks/*.scss"], {
     //     events: ['add', 'unlink']
     // }, scssComponents);
