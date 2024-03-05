@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package demo
+ * @package Start_Theme
  */
 
 get_header();

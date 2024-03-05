@@ -1,6 +1,6 @@
 <?php
 if (ACF_NESTED) {
-    $flexibleContentPath = get_template_directory() . '/ACF/flexible-content/';
+    $flexibleContentPath = get_template_directory() . './flexible-content';
     if (have_rows('layout_builder')) :
         while (have_rows('layout_builder')) :
             the_row();
@@ -26,5 +26,5 @@ if (ACF_NESTED) {
         endwhile;
     endif;
 } else {
-    include(get_template_directory() . '/ACF/acf-generate-page.php');
+    include(get_template_directory() . './acf-generate-page.php');
 }

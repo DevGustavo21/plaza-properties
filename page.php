@@ -26,7 +26,7 @@ get_header();
 	endwhile; // End of the loop.
 	?>
 
-<?php include(get_template_directory() . '/ACF/acf-generate-page.php'); ?>
+<?php include(get_template_directory() . '../ACF/acf-generate-page.php'); ?>
 
 </main><!-- #main -->
 

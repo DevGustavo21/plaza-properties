@@ -1,178 +1,259 @@
 <?php
+
 /**
- * Start Theme functions and definitions
+ * news_theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Start_Theme
+ * @package news_theme
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
-}
+/*————————————————————————————————————————————————————*\
+	●❱ BASIC SETUP
+\*————————————————————————————————————————————————————*/
 
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function start_theme_setup() {
-	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on Start Theme, use a find and replace
-		* to change 'start-theme' to the name of your theme in all the template files.
-		*/
-	load_theme_textdomain( 'start-theme', get_template_directory() . '/languages' );
+require_once 'includes/base/basic.php';
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+/*  |> Widgets
+——————————————————————————————————————————————————————*/
+include_once('includes/base/widgets.php');
 
-	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
-	add_theme_support( 'title-tag' );
 
-	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
-	add_theme_support( 'post-thumbnails' );
+/*  |> Enqueue scripts and styles.
+——————————————————————————————————————————————————————*/
+require_once 'includes/base/scripts-and-styles.php';
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'menu-1' => esc_html__( 'Primary', 'start-theme' ),
-		)
-	);
 
-	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
-	add_theme_support(
-		'html5',
-		array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			'style',
-			'script',
-		)
-	);
+/*  |> Helpers loop functions
+——————————————————————————————————————————————————————*/
+require_once 'includes/features/helpers-loop.php';
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'start_theme_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
 
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+/*————————————————————————————————————————————————————*\
+	●❱ ACF
+\*————————————————————————————————————————————————————*/
 
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
-	);
-}
-add_action( 'after_setup_theme', 'start_theme_setup' );
+require_once 'includes/features/acf.php';
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function start_theme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'start_theme_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'start_theme_content_width', 0 );
+/*————————————————————————————————————————————————————*\
+	●❱ CUSTOMIZER
+\*————————————————————————————————————————————————————*/
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function start_theme_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'start-theme' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'start-theme' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'start_theme_widgets_init' );
+include_once('includes/features/settings-customizer.php');
 
-/**
- * Enqueue scripts and styles.
- */
-function start_theme_scripts() {
-	wp_enqueue_style( 'start-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'start-theme-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'start-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+/*————————————————————————————————————————————————————*\
+	●❱ IMPROVE: WP MENU NAV
+\*————————————————————————————————————————————————————*/
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+require_once 'includes/features/improve-wp-nav.php';
+
+
+/*————————————————————————————————————————————————————*\
+	●❱ OTHERS
+\*————————————————————————————————————————————————————*/
+
+/*
+——— Disabled Gutenberg Blocks edit only pages
+*/
+
+add_filter( 'use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2 );
+function prefix_disable_gutenberg( $current_status, $post_type ) {
+	if ( 'page' === $post_type ) {
+		return false;
 	}
+	return $current_status;
 }
-add_action( 'wp_enqueue_scripts', 'start_theme_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
+/*
+——— Get users name
+*/
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
+function sp_get_users_names( $users_ids ) {
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+	$authors_names = array();
+	if ( $users_ids ) {
+		foreach ( $users_ids as $key => $id ) {
+			$authors_names[] = sp_get_user_name( $id );
+		}
+	}
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+	return implode( ', ', $authors_names );
 }
+
+//Allow SVG files
+
+function enable_svg_upload( $upload_mimes ) {
+    $upload_mimes['svg'] = 'image/svg+xml';
+    $upload_mimes['svgz'] = 'image/svg+xml';
+    return $upload_mimes;
+}
+add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
+
+
+
+function sp_get_user_name( $user_id ) {
+	$user_info = get_userdata( $user_id );
+	return $user_info->first_name . ' ' . $user_info->last_name;
+}
+
+
+/**
+ * Check if the value exists and returns a 'true' or 'false' like string
+ *
+ * @return string Retunr 'true' or 'false'
+ */
+function sp_has_value( $value ) {
+	return $value ? 'true' : 'false';
+}
+
+
+/*
+——— Hide admin bar in mobile devices
+*/
+
+function inject_scripts_footer() {
+	?>
+
+	<?php if ( is_user_logged_in() ) : ?>
+
+		<script>
+			const mediaQuery = window.matchMedia('(max-width: 786px)');
+			const wpAdminBar = document.getElementById('wpadminbar');
+			var $htmlElement = document.querySelector('html');
+
+			const handleMediaChange = (mediaQuery) => {
+				if (mediaQuery.matches) {
+					wpAdminBar.style.display = 'none';
+					document.body.classList.remove('admin-bar');
+					$htmlElement.setAttribute('style', 'margin-top: 0!important');
+				} else {
+					wpAdminBar.style.display = 'block';
+					document.body.classList.add('admin-bar');
+					$htmlElement.setAttribute('style', 'margin-top: 32px!important');
+				}
+			};
+
+			mediaQuery.addEventListener('change', handleMediaChange);
+			handleMediaChange(mediaQuery);
+		</script>
+
+	<?php endif; ?>
+
+	<?php
+}
+add_action( 'wp_footer', 'inject_scripts_footer' );
+
+/**
+ * Phone URL
+ * @author Bill Erickson
+ * @link https://www.billerickson.net/phone-number-url
+ *
+ * @param string $phone_number, ex: (555) 123-4568
+ * @return string $phone_url, ex: tel:5551234568
+ */
+function sp_phone_url( $phone_number = false ) {
+	$phone_number = str_replace( array( '(', ')', '-', '.', '|', ' ' ), '', $phone_number );
+	return esc_url( 'tel:' . $phone_number );
+}
+
+/*
+——— Change height in podcast embed
+*/
+
+function sp_change_embed_height( $embed ) {
+	return preg_replace( '/height="[^"]+"/', 'height="152"', $embed );
+}
+
+
+//USE BLOCK EDITOR ONLY FOR PAGE AND GUTENBERG FOR POSTS
+
+add_filter( 'use_block_editor_for_page', '__return_false', 10 );
+
+
+add_action('acf/init', function(){
+    if (function_exists('acf_register_block_type')){
+        acf_register_block_type(array(
+            'name'            => 'bk_gutenberg-slider',
+            'title'           => 'Slider Blog',
+            'description'     => 'Block to add slider features',
+			'mode' => 'edit',
+            'render_template' => get_stylesheet_directory() . '/ACF/blocks/template-blocks/bk_gutenberg-slider.php',
+            'enqueue_style'   => get_stylesheet_directory_uri() . '/assets/scss/components/_cp-slider.scss',
+            'icon'            => 'dashicons dashicons-slides',
+            'supports'        => array(
+                'anchor' => true,
+                'align'  => true,
+                'html'   => false,
+                'mode'   => 'edit',
+            ),
+        ));
+    }
+});
+
+
+add_action('acf/init', function(){
+    if (function_exists('acf_register_block_type')){
+        acf_register_block_type(array(
+			'name'            => 'bk_gutenberg-project',
+            'title'           => 'Call to Action',
+            'description'     => 'Block to add a CTA features',
+			'mode'=> 'edit',
+            'render_template' => get_stylesheet_directory() . '/ACF/blocks/template-blocks/bk_gutenberg-project.php',
+            'enqueue_style'   => get_stylesheet_directory_uri() . '/assets/scss/components/_cp-project.scss',
+            'icon'            => 'dashicons dashicons-align-full-width',
+			"supports" => array (
+				"anchor" => true,
+				"align" => true,
+				"html" => false,
+				"mode" => false
+			),
+        ));
+    }
+});
+
+
+// Función para cargar posts basado en la página seleccionada
+function load_posts_by_page() {
+    $paged = $_POST['page'];
+
+    $args = array(
+        'posts_per_page' => 3,
+        'paged' => $paged,
+    );
+
+    $my_posts = new WP_Query($args);
+
+    if ($my_posts->have_posts()) :
+        while ($my_posts->have_posts()) : $my_posts->the_post();
+            echo '<li>';
+            echo '<a href="' . esc_url(get_permalink()) . '">';
+            
+            if (has_post_thumbnail()) :
+                $image_id = get_post_thumbnail_id();
+                $image = wp_get_attachment_image($image_id, 'full', false, array('class' => 'entry-image'));
+                echo $image;
+            endif;
+
+            echo '<div class="info-post">';
+            echo '<div class="entry-title">' . esc_html(get_the_title()) . '</div>';
+            echo '<div class="entry-date">' . esc_html(get_the_date('F j, Y')) . '</div>';
+            echo '</div>';
+            echo '</a>';
+            echo '</li>';
+        endwhile;
+
+        // Restore the original WordPress loop
+        wp_reset_postdata();
+    else :
+        echo 'No posts found';
+    endif;
+
+    wp_die(); // Termina la ejecución de la función
+}
+
+// Hook para añadir la función de carga AJAX
+add_action('wp_ajax_load_posts_by_page', 'load_posts_by_page');
+add_action('wp_ajax_nopriv_load_posts_by_page', 'load_posts_by_page');
 
