@@ -1,14 +1,14 @@
 /*!
-Theme Name: Starter Theme
-Theme URI: starter-theme
-Author: Starter Theme
-Description: Starter Theme
+Theme Name: Start Theme
+Theme URI: start-theme
+Author: Start Theme
+Description: Start Theme
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: starter-theme
+Text Domain: start-theme
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
@@ -90,12 +90,4 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 # Utilities
 --------------------------------------------------------------*/
 
-@import "utilities/utilities";
-
-/* Accessibility
---------------------------------------------- */
-@import "utilities/accessibility";
-
-/* Alignments
---------------------------------------------- */
-@import "utilities/alignments";
+@import "utilities/general_utilities";

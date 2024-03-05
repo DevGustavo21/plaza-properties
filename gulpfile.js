@@ -41,7 +41,7 @@ const { series } = require("gulp");
 \*————————————————————————————————————————————————————*/
 
 const config = {
-    urlBrowserSync: "starter-theme.local",
+    urlBrowserSync: "start-theme.local",
     slug_theme: "start-theme",
     BrowserList: "last 1 versions",
     pathIconsOrigin: "assets/icons/", //Does not work with sub directories

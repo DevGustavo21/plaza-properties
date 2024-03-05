@@ -38,96 +38,54 @@ $kbd-bg: white;
   @include rfs("--p-container", 2rem, 4rem); //Padding Container
   --max-width-container: #{$max-width-container};
 
-  /*
-    ——— Transition duration time
-    */
+  /* ——— Transition duration time */
   --g-trans: 0.3s;
 
-  /*
-    ——— Border radius
-    */
+  /* ——— Border radius */
+  --g-br: 10px;
 
-  --g-br: 0;
+  /* ——— Box Shadow */
+  --g-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-  /*
-    ——— Box Shadow
-    */
-
-  --g-shadow: 0px 10px 24px -1px rgba(0, 0, 0, 0.2);
-
-  /*
-    ——— Fonts
-    */
-
-  //Body, paragraphs, buttons
-  --ff-primary: Proxima400, Arial, Helvetica, sans-serif;
-  //Headings
-  --ff-secondary700: Rift700, Arial, Helvetica, sans-serif;
-  --ff-secondary600: Rift600, Arial, Helvetica, sans-serif;
-  --ff-secondary500: Rift500, Arial, Helvetica, sans-serif;
-  --ff-secondary400: Rift400, Arial, Helvetica, sans-serif;
+  /* ——— Fonts */
   --body-font-size: 1rem;
   --body-line-height: 1.5;
 
-  /*
-    ——— Colors
-    */
+  /* ——— Colors */
   --c-primary: #231f20;
   --c-primary-hover: #231f20de;
-  --c-secondary: #cf0a2c;
-  --c-accent: #cf0a2c;
-  --c-accent-hover: #ad031f;
-  --c-accent-second: #b51a34;
+  --c-second: #7c7c7c;
+  --c-second-hover: #595959;
   --c-body-bg: #fff;
-  --c-gray-bg: #a5a5a5;
-  --c-semiblack: #7c7c7c;
-  --c-text: #595959;
-  --c-text-second: #ABABAB;
+  --c-gray: #a5a5a5;
 
-  /*
-    ——— HR
-    */
+  /* ——— HR */
   --hr-color: grey;
   --hr-opacity: 1;
 
-  /*
-    ——— Mark
-    */
+  /* ——— Mark */
   --mark-padding: 0.5rem;
 
-  /*
-    ——— Links
-    */
+  /* ——— Links */
   --link-color: var(--c-primary);
-  // --link-decoration: var(--c-primary-dark);
-  --link-hover-color: var(--c-primary-dark);
-  // --link-hover-decoration: var(--c-secondary-dark);
+  --link-hover-color: var(--c-primary-hover);
 
-  /*
-    ——— Font sizes
-    */
+  /* ——— Font sizes */
   @include rfs("--fs-n1", 0.75rem, 0.75rem);
-  @include rfs("--fs-n2", 0.875rem, 0.9375rem);
   @include rfs("--fs-base", 1rem, 1rem);
 
   @include rfs("--fs-0", 0.875rem, 0.938rem);
   @include rfs("--fs-1", 1rem, 1.125rem);
-  @include rfs("--fs-2", 1.125rem, 1.25rem);
-  @include rfs("--fs-3", 1.25rem, 1.5rem);
-  @include rfs("--fs-35", 1.25rem, 1.563rem);
-  @include rfs("--fs-4", 1.5rem, 1.75rem);
-  @include rfs("--fs-5", 1.625rem, 2rem);
-  @include rfs("--fs-6", 2rem, 2.5rem);
-  @include rfs("--fs-65", 2rem, 2.813rem);
-  @include rfs("--fs-68", 2rem, 3rem);
-  @include rfs("--fs-7", 2rem, 3.5rem);
+  @include rfs("--fs-2", 1.25rem, 1.5rem);
+  @include rfs("--fs-3", 1.5rem, 1.75rem);
+  @include rfs("--fs-4", 1.625rem, 2rem);
+  @include rfs("--fs-5", 2rem, 2.5rem);
+  @include rfs("--fs-6", 2rem, 3.5rem);
   @include rfs("--fs-hero-1", 2.5rem, 4.6rem);
-  @include rfs("--fs-hero-15", 2rem, 5.75rem);
   @include rfs("--fs-hero-2", 2rem, 6.25rem);
   @include rfs("--hg-navbar", 71px, 124px);
-  /*
-    ——— Spacing
-    */
+
+  /* ——— Spacing */
   @include rfs("--sp-16", 1rem, 1rem); //16px
   @include rfs("--sp-32", 1.5rem, 2rem); //32px
   @include rfs("--sp-40", 2rem, 2.5rem); //40px
@@ -135,7 +93,7 @@ $kbd-bg: white;
   @include rfs("--sp-64", 2rem, 4rem); //64px
   @include rfs("--sp-80", 2.5rem, 5rem); //80px
   @include rfs("--sp-120", 2.5rem, 7.5rem); //120px
-  // @include rfs("--sp-160", 2.5rem, 10rem); //160px
+  @include rfs("--sp-160", 2.5rem, 10rem); //160px
 
   @include m_query(22.5rem) {
     --p-container: 1.5rem !important;
