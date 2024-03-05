@@ -81,7 +81,7 @@
 
 						);
 
-						get_template_part( 'template-parts/components/card', null, $options );
+						get_template_part( 'template-parts/blocks/card', null, $options );
 					}
 					?>
 				</div>
