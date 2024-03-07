@@ -1,5 +1,5 @@
 <?php
-if (ACF_NESTED) {
+if (!ACF_NESTED) {
     $flexibleContentPath = get_template_directory() . './flexible-content';
     if (have_rows('layout_builder')) :
         while (have_rows('layout_builder')) :

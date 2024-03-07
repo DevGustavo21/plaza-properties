@@ -25,6 +25,4 @@
 	<div id="page" class="site">
 		<a class="skip-link visually-hidden-focusable" href="#main-content"><?php esc_html_e('Skip to content', 'news-theme'); ?></a>
 
-		 <?php //get_template_part('template-parts/header/content-header-top-bar'); ?>
 		<?php get_template_part('template-parts/header/content-header'); ?>
-		<?php //get_template_part('template-parts/header/content-header-sticky'); ?>
