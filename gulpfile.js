@@ -259,7 +259,7 @@ function js_vendors() {
 function js_custom() {
 
     const customs = [
-        config.path_source_js + 'index.js',
+        config.path_source_js + 'main.js',
     ]
 
     return gulp.src(customs)
@@ -277,11 +277,8 @@ function js_custom() {
                 ]
             ]
         }))
-        .pipe(concat("production.js"))
-        .pipe(lineec())
-        .pipe(gulp.dest(config.path_dist_js))
         .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(concat("production.min.js"))
+        .pipe(concat("main.min.js"))
         .pipe(uglify())
         .pipe(lineec())
         .pipe(sourcemaps.write("."))
