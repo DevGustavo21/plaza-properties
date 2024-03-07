@@ -11,6 +11,10 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 // Minimum screen size for Interpolete: 320px;
 // Maximum screen size for Interpolete: 1440px;
 
+h1, h2, h3, h4, h5, h6{
+  margin: 0!important;
+}
+
 $max-width-container: 110rem;
 $p-container: 4rem;
 
@@ -71,7 +75,7 @@ $kbd-bg: white;
   --link-hover-color: var(--c-primary-hover);
 
   /* ——— Font sizes */
-  @include rfs("--fs-n1", 0.75rem, 0.75rem);
+  @include rfs("--fs-n1", 0.8rem, 0.9rem);
   @include rfs("--fs-base", 1rem, 1rem);
 
   @include rfs("--fs-0", 0.875rem, 0.938rem);

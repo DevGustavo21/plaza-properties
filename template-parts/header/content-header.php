@@ -30,11 +30,11 @@
 				$site_name = get_bloginfo('name');
 				$site_logo = get_theme_mod('custom_logo'); // Obtain the current theme logo 
 				if ($site_logo) { ?>
-										<img src="<?php echo esc_url(wp_get_attachment_image_src($site_logo, 'full')[0]); ?>" alt="<?php echo esc_attr($site_name); ?>" class="logo__img">
+					<img src="<?php echo esc_url(wp_get_attachment_image_src($site_logo, 'full')[0]); ?>" alt="<?php echo esc_attr($site_name); ?>" class="logo__img">
 						
-						<?php } else { ?>
-										<span><?php echo esc_html($site_name); ?></span>
-							<?php } ?>
+				<?php } else { ?>
+					<span><?php echo esc_html($site_name); ?></span>
+				<?php } ?>
 							
 			</div>
 						

@@ -1,0 +1,117 @@
+.contentFooter {
+  width: 100%;
+  background-color: var(--c-body-bg);
+  color: var(--c-primary);
+  height: auto;
+  padding: 20px 40px;
+  box-sizing: border-box;
+
+  &__wrapper {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    flex-wrap: wrap;
+
+    .site-footer {
+      width: 100%;
+      border: 2px solid white;
+    }
+
+    .site_logo {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 130px;
+        object-fit: cover;
+      }
+    }
+
+    .site_navigation {
+      .menu {
+        padding: 0;
+        margin: 0;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        column-gap: 30px;
+
+        li {
+          a {
+            color: var(--c-primary);
+            font-size: var(--fs-base);
+            font-weight: 400;
+            transition: var(--g-trans);
+
+            &:hover {
+              color: var(--c-second);
+            }
+          }
+        }
+      }
+    }
+
+    .site-policies {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include m_query($bp-md) {
+        flex-wrap: wrap;
+      }
+
+      .copyright {
+        font-size: var(--fs-n1);
+        color: var(--c-primary);
+
+        @include m_query($bp-md) {
+          font-size: var(--fs-base);
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .policies {
+
+        @include m_query($bp-md) {
+          width: 100vw;
+        }
+
+        nav {
+          @include m_query($bp-md) {
+            margin-top: 20px;
+          }
+
+          ul {
+            display: flex;
+            column-gap: 15px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+            @include m_query($bp-md) {
+              justify-content: center;
+            }
+            
+            li {
+              text-align: center;
+              a {
+                font-size: var(--fs-n1);
+                color: var(--c-primary);
+                text-decoration: underline;
+                text-underline-offset: 5px;
+
+                @include m_query($bp-md) {
+                  font-size: var(--fs-base);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

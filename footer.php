@@ -11,69 +11,94 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'start-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'start-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'start-theme' ), 'start-theme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
+<footer class="contentFooter">
+	<div class="contentFooter__wrapper">
+		<div class="site_logo site-footer">
+		<?php
+		$site_name = get_bloginfo('name');
+		$site_logo = get_theme_mod('custom_logo'); // Obtain the current theme logo 
+		if ($site_logo) { ?>
+						<img src="<?php echo esc_url(wp_get_attachment_image_src($site_logo, 'full')[0]); ?>" alt="<?php echo esc_attr($site_name); ?>" class="logo__img">
+						
+			<?php } else { ?>
+						<span><?php echo esc_html($site_name); ?></span>
+			<?php } ?>
 		</div>
-	</footer>
-</div>
+
+		<div class="site_navigation site-footer">
+		<?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'menu-2',
+				// 'menu_id' => 'secondary-menu',
+			)
+		);
+		?>
+		<hr>
+		</div>
+
+		<div class="site-policies site-footer">
+			<span class="copyright">© 2023 Skelementor. All rights reserved.</span>
+
+			<div class="policies">
+				<nav>
+					<ul>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms of Service</a></li>
+						<li><a href="#">Cookies Settings</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</footer>
 
 
 <script> //Script for dropdown navigation
 document.addEventListener('DOMContentLoaded', function() {
-    const menuItems = document.querySelectorAll('.menu-item-has-children');
+	const menuItems = document.querySelectorAll('.menu-item-has-children');
 
-    if (window.innerWidth >= 768) {
-        // Functionality for desktop devices
-        menuItems.forEach(function(item) {
-            let timer;
+	if (window.innerWidth >= 768) {
+		// Functionality for desktop devices
+		menuItems.forEach(function(item) {
+			let timer;
 
-            item.addEventListener('mouseenter', function() {
-                const subMenu = this.querySelector('.sub-menu');
-                if (subMenu) {
-                    subMenu.style.display = "flex";
-                }
-            });
+			item.addEventListener('mouseenter', function() {
+				const subMenu = this.querySelector('.sub-menu');
+				if (subMenu) {
+					subMenu.style.display = "flex";
+				}
+			});
 
-            item.addEventListener('mouseleave', function() {
-                const subMenu = this.querySelector('.sub-menu');
-                if (subMenu) {
-                    timer = setTimeout(function() {
-                        subMenu.style.display = "none";
-                    }, 300);
-                }
-            });
+			item.addEventListener('mouseleave', function() {
+				const subMenu = this.querySelector('.sub-menu');
+				if (subMenu) {
+					timer = setTimeout(function() {
+						subMenu.style.display = "none";
+					}, 300);
+				}
+			});
 
-            item.addEventListener('mouseenter', function() {
-                clearTimeout(timer);
-            });
-        });
-    } else {
-        // Functionality for mobile devices
-        menuItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                const subMenu = this.querySelector('.sub-menu');
+			item.addEventListener('mouseenter', function() {
+				clearTimeout(timer);
+			});
+		});
+	} else {
+		// Functionality for mobile devices
+		menuItems.forEach(function(item) {
+			item.addEventListener('click', function() {
+				const subMenu = this.querySelector('.sub-menu');
 
-                if (subMenu) {
-                    if (subMenu.style.display === "none" || subMenu.style.display === "") {
-                        subMenu.style.display = "flex";
-                    } else {
-                        subMenu.style.display = "none";
-                    }
-                }
-            });
-        });
-    }
+				if (subMenu) {
+					if (subMenu.style.display === "none" || subMenu.style.display === "") {
+						subMenu.style.display = "flex";
+					} else {
+						subMenu.style.display = "none";
+					}
+				}
+			});
+		});
+	}
 });
 
 
@@ -86,14 +111,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Evento para el botón de cierre
 openBtn.addEventListener('click', () => {
-    menu.style.display = 'block';
+	menu.style.display = 'block';
 	closeBtn.style.display = 'flex';
 	openBtn.style.display = 'none'
 });
 
 // Evento para el botón de apertura
 closeBtn.addEventListener('click', () => {
-    menu.style.display = 'none';
+	menu.style.display = 'none';
 	closeBtn.style.display = 'none';
 	openBtn.style.display = 'flex'
 
