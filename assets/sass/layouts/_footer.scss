@@ -95,14 +95,21 @@
             @include m_query($bp-md) {
               justify-content: center;
             }
-            
+
             li {
               text-align: center;
+
               a {
                 font-size: var(--fs-n1);
                 color: var(--c-primary);
                 text-decoration: underline;
                 text-underline-offset: 5px;
+                transition: var(--g-trans);
+
+                &:hover {
+                  text-decoration: underline var(--c-second);
+                  color: var(--c-second);
+                }
 
                 @include m_query($bp-md) {
                   font-size: var(--fs-base);
