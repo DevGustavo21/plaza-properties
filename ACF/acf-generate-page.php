@@ -1,5 +1,5 @@
 <?php
-$flexibleContentPath = get_template_directory() . '/wp-content/themes/start-theme/ACF/flexible-content';
+$flexibleContentPath = get_template_directory() . './flexible-content';
 if (have_rows('page_builder')) :
     while (have_rows('page_builder')) :
         the_row();

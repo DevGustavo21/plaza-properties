@@ -7,7 +7,7 @@ Template Post Type: page
 get_header();
 
 ?>
-
+<!-- 
 <main id="main-content" class="site-main">
 	<div class="container my-40">
 		<div class="row">
@@ -32,8 +32,8 @@ get_header();
 		</div>
 
 	</div>
-</main>
+</main> -->
 
 <?php
 
-get_footer();
+// get_footer();
