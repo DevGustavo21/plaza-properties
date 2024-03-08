@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "cp_hero",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -102,5 +102,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697149854
+    "modified": 1709915052
 }

@@ -19,7 +19,7 @@
             "layouts": {
                 "layout_65e79f191e66a": {
                     "key": "layout_65e79f191e66a",
-                    "name": "cp-hero",
+                    "name": "cp_hero",
                     "label": "Hero",
                     "display": "block",
                     "sub_fields": [
@@ -129,5 +129,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709679335
+    "modified": 1709915108
 }

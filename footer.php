@@ -38,7 +38,7 @@
 		</div>
 
 		<div class="site-policies site-footer">
-			<span class="copyright">© 2023 Skelementor. All rights reserved.</span>
+			<span class="copyright">© 2023 Start Theme. All rights reserved.</span>
 
 			<div class="policies">
 				<nav>
