@@ -1,165 +1,96 @@
 .testimonial {
-  background-color: var(--c-primary);
-  width: 100%;
-  padding: 82px 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  padding: 60px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--c-body-bg);
 
-  @include m_query($bp-sm){
-    padding: 50px 30px;
-    min-height: 500px;
-    align-items: flex-start;
+  @include m_query($bp-lg) {
+    padding: 40px;
   }
 
-  h2 {
-    font-size: var(--fs-65);
-    font-family: var(--ff-secondary500);
-    color: var(--c-body-bg);
-    font-weight: 500;
-    line-height: normal;
-    position: relative;
-    padding-bottom: 20px;
-    text-transform: uppercase;
-
-    @include m_query($bp-md){
-      font-size: 45px;
-    }
-
-    &::before {
-      content: "";
-      width: 120px;
-      height: 4px;
-      background-color: var(--c-accent);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    &::after {
-      content: "";
-      width: 20px;
-      height: 10px;
-      background-color: var(--c-primary);
-      position: absolute;
-      bottom: -5px;
-      left: calc(120px - 10px);
-      transform: rotate(-35deg);
-    }
+  &__title {
+    font-size: var(--fs-4);
+    font-weight: 700;
+    color: var(--c-primary);
   }
 
-  &__cards {
-    width: 100%;
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-between;
-    column-gap: 50px;
+  &__items {
+    margin-top: 40px;
 
-    @include m_query($bp-sm){
-        margin-top: 30px;
-        padding: 0;
-    }
+    .swiper {
+      width: 100%;
+      height: fit-content;
+      padding-bottom: 80px;
 
-    .card {
-      width: 350px;
-      height: auto;
+      .swiper-button-prev,
+      .swiper-button-next {
+        font-size: 22px;
+        background-color: var(--c-body-bg);
+        border: 1px solid var(--c-primary);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 90%;
+        color: var(--c-primary);
 
-      .text {
-        margin-top: 10px;
-        font-family: var(--ff-primary);
-        color: var(--c-text-second);
-        font-size: var(--fs-2);
-        font-weight: 400;
-        line-height: normal;
-
-        .author {
-          max-width: 350px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .spacer {
-            width: 1.5px;
-            height: 20px;
-            background-color: var(--c-gray-bg);
-          }
+        @include m_query($bp-md) {
+          top: 85%;
         }
       }
-    }
-  }
 
-  .arrows1 {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    padding: 0 30px;
-    top: 57%;
-    bottom: 57%;
+      .swiper-wrapper {
+        height: fit-content;
 
-    @include m_query($bp_lg) {
-      padding: 0 30px;
-    }
+        .swiper-slide {
+          border: 1px solid black;
+          padding: 30px 20px;
+          height: 100%;
 
-    @include m_query($bp_md) {
-      padding: 0 30px;  
-      top: inherit;
-      left: 0;
-      bottom: 50px;
-    }
+          @include m_query($bp-xl) {
+            width: 20% !important;
+          }
 
-    .prev1 {
-      transform: rotate(90deg);
-    }
+          @include m_query($bp-lg) {
+            width: 28% !important;
+          }
 
-    .next1 {
-      transform: rotate(-90deg);
-    }
+          @include m_query($bp-md) {
+            width: 43% !important;
+            padding: 20px;
+          }
 
-    button {
-      width: 50px;
-      height: 50px;
-      border: 1px solid var(--c-gray-bg);
-      border-radius: 50%;
-      background-color: transparent;
-    }
-  }
+          @include m_query($bp-sm) {
+            width: 86% !important;
+            max-width: 350px !important;
+          }
 
-  .slick-initialized .slick-slide {
-    display: flex !important;
-  }
+          .stars {
+            .filled {
+              color: var(--c-primary);
+            }
+          }
 
-  .slick-track {
-    display: flex;
-    column-gap: 95px;
-    align-items: start;
+          .content {
+            font-size: var(--fs-base);
+            font-weight: 400;
+            color: var(--c-primary);
+            line-height: normal;
+            margin: 0;
+            margin-top: 10px;
+          }
 
-    @include m_query($bp_sm){
-        column-gap: 0px;
-    }
-  }
-
-  .check{
-    margin-top: var(--sp-64);
-    font-weight: 400;
-    color: var(--c-text-second);
-    font-family: var(--ff-primary);
-    font-size: var(--fs-2);
-
-    @include m_query($bp_sm){
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
-    column-gap: 4px;
-    }
-
-    span{
-      a{
-        color: var(--c-body-bg);
-        font-weight: 700;
-        text-decoration: none;
+          .extra-info {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--c-second);
+            font-size: var(--fs-n1);
+            font-weight: 600;
+          }
+        }
       }
     }
   }

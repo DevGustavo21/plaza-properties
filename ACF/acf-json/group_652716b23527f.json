@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_652716b2c42c1",
-            "label": "Section Title",
-            "name": "section_title",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -24,7 +24,7 @@
         },
         {
             "key": "field_652716d1b6198",
-            "label": "testimonials",
+            "label": "Testimonials",
             "name": "testimonials",
             "aria-label": "",
             "type": "repeater",
@@ -141,8 +141,8 @@
         },
         {
             "key": "field_657380f2899f4",
-            "label": "Social Media Link",
-            "name": "social_media_link",
+            "label": "Call to action",
+            "name": "call_to_action",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -174,5 +174,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702068501
+    "modified": 1710009925
 }

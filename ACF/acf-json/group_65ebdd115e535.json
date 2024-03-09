@@ -192,6 +192,94 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_65ecac94af52b": {
+                    "key": "layout_65ecac94af52b",
+                    "name": "cp-testimonial",
+                    "label": "Testimonial",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_65ecac94af52e",
+                            "label": "CONTENT",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 1
+                        },
+                        {
+                            "key": "field_65ecac94af52f",
+                            "label": "Testimonial",
+                            "name": "testimonial",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_652716b23527f"
+                            ],
+                            "display": "seamless",
+                            "layout": "table",
+                            "prefix_label": 1,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_65ecac94af530",
+                            "label": "<span class=\"icon-acf icon-settings icon-small\"><\/span>",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_65ecac94af531",
+                            "label": "Settings",
+                            "name": "settings",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_65e7a012741a2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -219,5 +307,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709957362
+    "modified": 1710009518
 }
