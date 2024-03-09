@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "cp_hero",
+            "return_format": "array",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -69,8 +69,24 @@
         },
         {
             "key": "field_652864892d228",
-            "label": "Hero Call to action",
-            "name": "hero_call_to_action",
+            "label": "First Call to action",
+            "name": "first_call_to_action",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_65ebd3972e741",
+            "label": "Second Call to Action",
+            "name": "second_call_to_action",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -102,5 +118,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1709915052
+    "modified": 1709955551
 }

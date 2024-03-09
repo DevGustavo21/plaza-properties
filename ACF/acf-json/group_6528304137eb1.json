@@ -1,11 +1,11 @@
 {
     "key": "group_6528304137eb1",
-    "title": "cp-clients",
+    "title": "cp-slider",
     "fields": [
         {
             "key": "field_6528309da0a08",
-            "label": "Client Logo Title",
-            "name": "client_logo_title",
+            "label": "Slider Logo Title",
+            "name": "slider_logo_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -24,8 +24,8 @@
         },
         {
             "key": "field_65283041964b4",
-            "label": "Client Logo Image",
-            "name": "client_logo_image",
+            "label": "Slider Logo Image",
+            "name": "slider_logo_image",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -46,8 +46,8 @@
             "sub_fields": [
                 {
                     "key": "field_65283053964b5",
-                    "label": "Logo client",
-                    "name": "logo_client",
+                    "label": "Logo Image",
+                    "name": "logo_image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -88,33 +88,6 @@
                     "parent_repeater": "field_65283041964b4"
                 }
             ]
-        },
-        {
-            "key": "field_65457e5132ccb",
-            "label": "Margins",
-            "name": "margins",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Margin Top": "Margin Top",
-                "Margin Bottom": "Margin Bottom",
-                "Both Margins": "Both Margins",
-                "None": "None"
-            },
-            "default_value": "None",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "layout": "vertical",
-            "save_other_choice": 0
         }
     ],
     "location": [
@@ -134,6 +107,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1702133680
+    "show_in_rest": 1,
+    "modified": 1709957178
 }

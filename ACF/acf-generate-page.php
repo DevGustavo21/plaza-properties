@@ -1,5 +1,6 @@
 <?php
 $flexibleContentPath = get_template_directory() . '/ACF/flexible-content/';
+
 if (have_rows('page_builder')) :
     while (have_rows('page_builder')) :
         the_row();
@@ -10,7 +11,7 @@ if (have_rows('page_builder')) :
         $cp = (object)get_row(true);
         
         $file = ($flexibleContentPath . str_replace('_', '-', $layoutPage)  . '.php');
-
+        
         if (file_exists($file) /* && $cp->cp_hidden != true*/) {
 
 
