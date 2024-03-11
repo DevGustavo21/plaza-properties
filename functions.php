@@ -64,22 +64,13 @@ function prefix_disable_gutenberg( $current_status, $post_type ) {
 	return $current_status;
 }
 
+//Disabled HTML editor
 
-/*
-——— Get users name
-*/
-
-function sp_get_users_names( $users_ids ) {
-
-	$authors_names = array();
-	if ( $users_ids ) {
-		foreach ( $users_ids as $key => $id ) {
-			$authors_names[] = sp_get_user_name( $id );
-		}
-	}
-
-	return implode( ', ', $authors_names );
+add_action('init', 'my_remove_editor_from_post_type');
+function my_remove_editor_from_post_type() {
+    remove_post_type_support( 'page', 'editor' );
 }
+
 
 //Allow SVG files
 
@@ -90,12 +81,6 @@ function enable_svg_upload( $upload_mimes ) {
 }
 add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
 
-
-
-function sp_get_user_name( $user_id ) {
-	$user_info = get_userdata( $user_id );
-	return $user_info->first_name . ' ' . $user_info->last_name;
-}
 
 
 /**
@@ -144,27 +129,6 @@ function inject_scripts_footer() {
 }
 add_action( 'wp_footer', 'inject_scripts_footer' );
 
-/**
- * Phone URL
- * @author Bill Erickson
- * @link https://www.billerickson.net/phone-number-url
- *
- * @param string $phone_number, ex: (555) 123-4568
- * @return string $phone_url, ex: tel:5551234568
- */
-function sp_phone_url( $phone_number = false ) {
-	$phone_number = str_replace( array( '(', ')', '-', '.', '|', ' ' ), '', $phone_number );
-	return esc_url( 'tel:' . $phone_number );
-}
-
-/*
-——— Change height in podcast embed
-*/
-
-function sp_change_embed_height( $embed ) {
-	return preg_replace( '/height="[^"]+"/', 'height="152"', $embed );
-}
-
 
 //USE BLOCK EDITOR ONLY FOR PAGE AND GUTENBERG FOR POSTS
 
@@ -211,48 +175,3 @@ add_action('acf/init', function(){
         ));
     }
 });
-
-
-// Función para cargar posts basado en la página seleccionada
-function load_posts_by_page() {
-    $paged = $_POST['page'];
-
-    $args = array(
-        'posts_per_page' => 3,
-        'paged' => $paged,
-    );
-
-    $my_posts = new WP_Query($args);
-
-    if ($my_posts->have_posts()) :
-        while ($my_posts->have_posts()) : $my_posts->the_post();
-            echo '<li>';
-            echo '<a href="' . esc_url(get_permalink()) . '">';
-            
-            if (has_post_thumbnail()) :
-                $image_id = get_post_thumbnail_id();
-                $image = wp_get_attachment_image($image_id, 'full', false, array('class' => 'entry-image'));
-                echo $image;
-            endif;
-
-            echo '<div class="info-post">';
-            echo '<div class="entry-title">' . esc_html(get_the_title()) . '</div>';
-            echo '<div class="entry-date">' . esc_html(get_the_date('F j, Y')) . '</div>';
-            echo '</div>';
-            echo '</a>';
-            echo '</li>';
-        endwhile;
-
-        // Restore the original WordPress loop
-        wp_reset_postdata();
-    else :
-        echo 'No posts found';
-    endif;
-
-    wp_die(); // Termina la ejecución de la función
-}
-
-// Hook para añadir la función de carga AJAX
-add_action('wp_ajax_load_posts_by_page', 'load_posts_by_page');
-add_action('wp_ajax_nopriv_load_posts_by_page', 'load_posts_by_page');
-

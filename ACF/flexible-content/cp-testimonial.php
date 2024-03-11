@@ -45,10 +45,11 @@ const swiper = new Swiper('.swiper', {
   spaceBetween: 10,
   navigation: true,
   infinite: true,
-
+  
     breakpoints: {
         768:{
             slidesPerView: 2,
+            spaceBetween: 10,
         },
 
         870:{

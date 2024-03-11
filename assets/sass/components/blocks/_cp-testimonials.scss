@@ -43,28 +43,14 @@
 
       .swiper-wrapper {
         height: fit-content;
+        width: 100vw;
 
         .swiper-slide {
-          border: 1px solid black;
           padding: 30px 20px;
           height: 100%;
 
-          @include m_query($bp-xl) {
-            width: 20% !important;
-          }
-
-          @include m_query($bp-lg) {
-            width: 28% !important;
-          }
-
-          @include m_query($bp-md) {
-            width: 43% !important;
-            padding: 20px;
-          }
-
-          @include m_query($bp-sm) {
-            width: 86% !important;
-            max-width: 350px !important;
+          @include m_query($bp-sm){
+            width: 71vw!important;
           }
 
           .stars {
