@@ -1,120 +1,129 @@
 .hero {
-  position: relative;
-  width: 100vw;
-  height: 911px;
-  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: auto;
+  padding: 60px 0;
+  display: flex;
+  column-gap: 50px;
+  align-items: center;
+
+  @include m_query($bp-lg) {
+    padding: 60px 40px;
+  }
 
   @include m_query($bp-md) {
-    height: 623px;
+    flex-wrap: wrap;
+    row-gap: 60px;
   }
 
-  &::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.86%, #000 114.75%);
-    position: absolute;
-    top: 0;
-    left: 0;
+  @include m_query($bp-sm) {
+    row-gap: 30px;
   }
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: zoomOutAnimation 10s forwards;
-
-    @keyframes zoomOutAnimation {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(1.2); /* Aplica el efecto de zoom out */
-      }
-    }
-  }
-
-  &__wrapper {
-    position: absolute;
-    max-width: 100%;
-    padding-inline: 50px;
-    padding-bottom: 150px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--c-body-bg);
-    z-index: 1;
+  .box {
+    flex: 1;
 
     @include m_query($bp-md) {
-      padding-inline: 25px;
-      padding-bottom: 80px;
-    }
-
-    @include m_query($bp-sm){
-      padding-bottom: 40px;
-    }
-  }
-  &__title {
-    font-family: var(--ff-secondary700);
-    font-size: var(--fs-hero-1);
-    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
-    font-weight: 700;
-    line-height: normal;
-    font-style: normal;
-
-    @include m_query($bp-sm){
-      font-size: 45px;
-    }
-  }
-  
-  &__subtitle {
-    font-family: var(--ff-primary);
-    font-size: var(--fs-2);
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    margin: 10px 0;
-    text-align: center;
-    
-    @include m_query($bp-sm){
-      margin: 0;
-      font-size: 16px;
-      font-weight: 400;
+      flex: auto;
+      width: 100%;
     }
   }
 
-  .link-wrapper {
-    width: 210px;
-    height: 45px;
-    margin-top: 20px;
-    overflow: hidden;
-    box-shadow: -3px 7px 8px rgba(0, 0, 0, 0.3);
+  &__info {
+    .wrapper {
+      max-width: 90%;
 
-    .hero__link {
-      clip-path: polygon(90% 0, 100% 37%, 100% 100%, 0 100%, 0 0);
-      background-color: var(--c-accent);
-      width: 210px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: var(--c-body-bg);
-      font-weight: 400;
-      font-family: var(--ff-primary);
-      font-size: var(--fs-0);
-      transition: var(--g-trans);
-      text-transform: uppercase;
+      @include m_query($bp-md) {
+        max-width: 100%;
+        text-align: center;
+      }
 
-      &:hover {
-        background-color: var(--c-accent-hover);
+      h1 {
+        font-size: var(--fs-5);
+        line-height: normal;
+        color: var(--c-primary);
+        font-weight: 700;
+
+        @include m_query($bp-md) {
+          font-size: 35px;
+        }
+      }
+
+      p {
+        font-size: var(--fs-base);
+        font-weight: 400;
+        color: var(--c-primary);
+        margin-top: 20px;
+        line-height: 30px;
+
+        @include m_query($bp-md) {
+          font-size: 18px;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        column-gap: 15px;
+
+        @include m_query($bp-md) {
+          flex-wrap: wrap;
+          row-gap: 15px;
+        }
+
+        a {
+          flex: 1;
+          max-width: 50%;
+          padding: 15px 30px;
+          text-align: center;
+          font-size: var(--fs-base);
+          font-weight: 400;
+          transition: var(--g-trans);
+
+          @include m_query($bp-md) {
+            flex: auto;
+            max-width: 100%;
+          }
+        }
+
+        .btn-1 {
+          background-color: var(--c-primary);
+          color: var(--c-body-bg);
+
+          &:hover {
+            background-color: var(--c-primary-hover);
+          }
+        }
+
+        .btn-2 {
+          border: 1px solid var(--c-primary);
+          color: var(--c-primary);
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 400px;
+      max-width: 85%;
+      height: 500px;
+      border-radius: 12px;
+      object-fit: cover;
+
+      @include m_query($bp-lg) {
+        width: 95%;
+        max-width: 100%;
+        height: auto;
+      }
+
+      @include m_query($bp-md) {
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 1/1;
       }
     }
   }

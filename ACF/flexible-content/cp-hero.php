@@ -1,22 +1,39 @@
+<?php
+
+$title = $cp->hero_title;
+$subtitle = $cp->hero_subtitle;
+$call_to_action = $cp->first_call_to_action;
+$second_call_to_action = $cp->second_call_to_action;
+$image = $cp->hero_image;
+
+?>
+
+
 <section class="hero">
-    <div class="overlay"></div>
-    <img
-  src="<?php echo $cp->hero_image['url']; ?>"
-  alt="<?php echo $cp->hero_image['filename']; ?>"
-  srcset="
-  <?php echo $cp->hero_image['sizes']['medium']; ?> 400w,
-    <?php echo $cp->hero_image['sizes']['medium']; ?> 768w,
-    <?php echo $cp->hero_image['url'] ?> 1517w"
-  sizes="(max-width: 1517px) 100vw, 1517px"
-  width="1517"
-  height="911"
->
-    <div class="hero__wrapper">
-        <h1 class="hero__title"><?php echo $cp->hero_title ?></h1>
-        <h2 class="hero__subtitle"><?php echo $cp->hero_subtitle ?></h2>
+  <div class="hero__info box">
+    <div class="wrapper">
+      <?php if (isset($title)): ?>
+        <h1><?php echo $title ?></h1>
+        <?php endif ?>
         
-        <div class="link-wrapper">
-            <a href="<?php echo $cp->hero_call_to_action['url'] ?>" class="hero__link"><?php echo $cp->hero_call_to_action['title'] ?></a>
-        </div>
-    </div>
+        <?php if (isset($subtitle)): ?>
+          <p><?php echo $subtitle ?></p>
+        <?php endif ?>
+
+        <div class="buttons">
+          <?php if(isset($call_to_action)):?>
+            <a class="btn-1" href="<?php echo $call_to_action['url']; ?>"><?php echo $call_to_action['title']; ?></a>
+          <?php endif;?>
+
+          <?php if(isset($second_call_to_action)):?>
+            <a class="btn-2" href="<?php echo $second_call_to_action['url']; ?>"><?php echo $second_call_to_action['title']; ?></a>
+          <?php endif?>
+          </div>
+      </div>
+  </div>
+  <div class="hero__image box">
+    <?php if(isset($image)):?>
+      <img src="<?php echo $image['url']?>" alt="<?php echo $image['filename']?>">
+    <?php endif?>
+  </div>
 </section>
