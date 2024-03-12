@@ -83,16 +83,6 @@ add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
 
 
 
-/**
- * Check if the value exists and returns a 'true' or 'false' like string
- *
- * @return string Retunr 'true' or 'false'
- */
-function sp_has_value( $value ) {
-	return $value ? 'true' : 'false';
-}
-
-
 /*
 ——— Hide admin bar in mobile devices
 */
