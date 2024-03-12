@@ -49,8 +49,8 @@
           padding: 30px 20px;
           height: 100%;
 
-          @include m_query($bp-sm){
-            width: 71vw!important;
+          @include m_query($bp-sm) {
+            width: 71vw !important;
           }
 
           .stars {
