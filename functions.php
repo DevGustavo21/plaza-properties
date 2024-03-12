@@ -34,19 +34,19 @@ require_once 'includes/features/helpers-loop.php';
 require_once 'includes/features/acf.php';
 
 /**
- * CUSTOMIZER
+ * Customizer
  */
 include_once('includes/features/settings-customizer.php');
 
 
 /**
- * IMPROVE: WP MENU NAV
+ * Improve: wp menu nav
  */
 require_once 'includes/features/improve-wp-nav.php';
 
 
 /**
- * CUSTOMS
+ * Customs
  */
 
 /** Disabled Gutenberg Blocks edit only pages */
@@ -64,7 +64,7 @@ function my_remove_editor_from_post_type() {
     remove_post_type_support( 'page', 'editor' );
 }
 
-/**Allow SVG files*/
+/** Allow SVG files */
 function enable_svg_upload( $upload_mimes ) {
     $upload_mimes['svg'] = 'image/svg+xml';
     $upload_mimes['svgz'] = 'image/svg+xml';
@@ -73,17 +73,18 @@ function enable_svg_upload( $upload_mimes ) {
 add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
 
 
-/**Calling menu.js file*/
+/** Calling menu.js file */
 function menu() {
     wp_enqueue_script( 'menu_script', get_stylesheet_directory_uri() . '/assets/js/menu.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'menu' );
 
 
-/**USE BLOCK EDITOR ONLY FOR PAGE AND GUTENBERG FOR POSTS */
+/** Use block editor only for page and gutenberg for posts */
 add_filter( 'use_block_editor_for_page', '__return_false', 10 );
 
-/**ALLOW USE ACF BLOCKS IN GUTENBERG FOR POSTS*/
+
+/** Allow use ACF blocks in gutenberg for posts */
 add_action('acf/init', function(){
     if (function_exists('acf_register_block_type')){
         acf_register_block_type(array(
