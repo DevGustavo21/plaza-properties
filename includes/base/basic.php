@@ -150,19 +150,19 @@ add_action( 'after_setup_theme', 'news_theme_content_width', 0 );
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/includes/features/template-functions.php';
+// require get_template_directory() . '/includes/features/template-functions.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/includes/features/customizer.php';
+// require get_template_directory() . '/includes/features/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/includes/features/jetpack.php';
-}
+// if ( defined( 'JETPACK__VERSION' ) ) {
+	// require get_template_directory() . '/includes/features/jetpack.php';
+// }
 
 /**
  * The header logo
