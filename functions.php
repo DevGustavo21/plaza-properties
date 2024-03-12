@@ -138,33 +138,12 @@ add_filter( 'use_block_editor_for_page', '__return_false', 10 );
 add_action('acf/init', function(){
     if (function_exists('acf_register_block_type')){
         acf_register_block_type(array(
-            'name'            => 'bk_gutenberg-slider',
-            'title'           => 'Slider Blog',
-            'description'     => 'Block to add slider features',
-			'mode' => 'edit',
-            'render_template' => get_stylesheet_directory() . '/ACF/blocks/template-blocks/bk_gutenberg-slider.php',
-            'enqueue_style'   => get_stylesheet_directory_uri() . '/assets/scss/components/_cp-slider.scss',
-            'icon'            => 'dashicons dashicons-slides',
-            'supports'        => array(
-                'anchor' => true,
-                'align'  => true,
-                'html'   => false,
-                'mode'   => 'edit',
-            ),
-        ));
-    }
-});
-
-
-add_action('acf/init', function(){
-    if (function_exists('acf_register_block_type')){
-        acf_register_block_type(array(
-			'name'            => 'bk_gutenberg-project',
+			'name'            => 'bk_gutenberg-cta',
             'title'           => 'Call to Action',
             'description'     => 'Block to add a CTA features',
 			'mode'=> 'edit',
-            'render_template' => get_stylesheet_directory() . '/ACF/blocks/template-blocks/bk_gutenberg-project.php',
-            'enqueue_style'   => get_stylesheet_directory_uri() . '/assets/scss/components/_cp-project.scss',
+            'render_template' => get_stylesheet_directory() . '/ACF/blocks/template-blocks/bk_gutenberg-cta.php',
+            'enqueue_style'   => get_stylesheet_directory_uri() . '/assets/sass/components/blocks/_cp-cta.scss',
             'icon'            => 'dashicons dashicons-align-full-width',
 			"supports" => array (
 				"anchor" => true,

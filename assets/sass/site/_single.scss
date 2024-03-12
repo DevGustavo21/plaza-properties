@@ -1,0 +1,35 @@
+.blog-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+
+    @include m_query($bp-lg) {
+        padding: 60px 40px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        max-width: 85%;
+        line-height: normal;
+        color: var(--c-primary);
+    }
+
+    h1 {
+        font-size: var(--fs-6);
+    }
+
+    h2 {
+        font-size: var(--fs-5);
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: var(--fs-4);
+    }
+}
