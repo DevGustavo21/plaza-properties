@@ -8,72 +8,70 @@
  * @package news_theme
  */
 
-/*————————————————————————————————————————————————————*\
-	●❱ BASIC SETUP
-\*————————————————————————————————————————————————————*/
+/**
+ * Basic setup
+ */
 require_once 'includes/base/basic.php';
 
-/*  |> Widgets
-——————————————————————————————————————————————————————*/
+
+/**
+ * Widgets
+ */
 include_once('includes/base/widgets.php');
 
 
-/*  |> Enqueue scripts and styles.
-——————————————————————————————————————————————————————*/
+/**
+ * Enqueue scripts and styles
+ */
 require_once 'includes/base/scripts-and-styles.php';
 
 
-/*  |> Helpers loop functions
-——————————————————————————————————————————————————————*/
+/**
+ * Helpers loop functions
+ */
 require_once 'includes/features/helpers-loop.php';
 
 
-/*————————————————————————————————————————————————————*\
-	●❱ ACF
-\*————————————————————————————————————————————————————*/
-
+/**
+ * ACF
+ */
 require_once 'includes/features/acf.php';
 
-/*————————————————————————————————————————————————————*\
-	●❱ CUSTOMIZER
-\*————————————————————————————————————————————————————*/
 
+/**
+ * CUSTOMIZER
+ */
 include_once('includes/features/settings-customizer.php');
 
 
-/*————————————————————————————————————————————————————*\
-	●❱ IMPROVE: WP MENU NAV
-\*————————————————————————————————————————————————————*/
-
+/**
+ * IMPROVE: WP MENU NAV
+ */
 require_once 'includes/features/improve-wp-nav.php';
 
 
-/*————————————————————————————————————————————————————*\
-	●❱ OTHERS
-\*————————————————————————————————————————————————————*/
+/**
+ * CUSTOMS
+ */
 
-/*
-——— Disabled Gutenberg Blocks edit only pages
-*/
-
-add_filter( 'use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2 );
+/** Disabled Gutenberg Blocks edit only pages */
 function prefix_disable_gutenberg( $current_status, $post_type ) {
 	if ( 'page' === $post_type ) {
 		return false;
 	}
 	return $current_status;
 }
+add_filter( 'use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2 );
 
-//Disabled HTML editor
 
-add_action('init', 'my_remove_editor_from_post_type');
+/** Disabled HTML editor */
 function my_remove_editor_from_post_type() {
     remove_post_type_support( 'page', 'editor' );
 }
+add_action('init', 'my_remove_editor_from_post_type');
 
 
-//Allow SVG files
-
+/** Allow SVG files */
 function enable_svg_upload( $upload_mimes ) {
     $upload_mimes['svg'] = 'image/svg+xml';
     $upload_mimes['svgz'] = 'image/svg+xml';
@@ -82,11 +80,7 @@ function enable_svg_upload( $upload_mimes ) {
 add_filter( 'upload_mimes', 'enable_svg_upload', 10, 1 );
 
 
-
-/*
-——— Hide admin bar in mobile devices
-*/
-
+/** Hide admin bar in mobile devices */
 function inject_scripts_footer() {
 	?>
 
@@ -120,11 +114,11 @@ function inject_scripts_footer() {
 add_action( 'wp_footer', 'inject_scripts_footer' );
 
 
-//USE BLOCK EDITOR ONLY FOR PAGE AND GUTENBERG FOR POSTS
-
+/** Hide block editor in pages */
 add_filter( 'use_block_editor_for_page', '__return_false', 10 );
 
 
+/** Show gutenberg  blocks in posts */
 add_action('acf/init', function(){
     if (function_exists('acf_register_block_type')){
         acf_register_block_type(array(
