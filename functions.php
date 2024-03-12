@@ -8,15 +8,6 @@
  * @package news_theme
  */
 
-/**
- * Basic setup
- */
-require_once 'includes/base/basic.php';
-
-/**
- * Widgets
- */
-include_once('includes/base/widgets.php');
 
 /**
  * Enqueue scripts and styles
@@ -24,26 +15,9 @@ include_once('includes/base/widgets.php');
 require_once 'includes/base/scripts-and-styles.php';
 
 /**
- * Helpers loop functions
- */
-require_once 'includes/features/helpers-loop.php';
-
-/**
- * ACF
+ * ACF (Styles)
  */
 require_once 'includes/features/acf.php';
-
-/**
- * CUSTOMIZER
- */
-include_once('includes/features/settings-customizer.php');
-
-
-/**
- * IMPROVE: WP MENU NAV
- */
-require_once 'includes/features/improve-wp-nav.php';
-
 
 /**
  * CUSTOMS

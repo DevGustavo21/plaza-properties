@@ -1,5 +1,3 @@
-console.log('hola')
-
 document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".menu-item-has-children");
 
@@ -47,22 +45,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-});
 
-const openBtn = document.querySelector(".btn-open");
-const closeBtn = document.querySelector(".btn-close");
-const menu = document.querySelector(".navigation");
+  const openBtn = document.querySelector(".btn-open");
+  const closeBtn = document.querySelector(".btn-close");
+  const menu = document.querySelector(".navigation");
 
-// Evento para el botón de cierre
-openBtn.addEventListener("click", () => {
-  menu.style.display = "block";
-  closeBtn.style.display = "flex";
-  openBtn.style.display = "none";
-});
+  // Evento para el botón de cierre
+  openBtn.addEventListener("click", () => {
+    menu.style.display = "block";
+    closeBtn.style.display = "flex";
+    openBtn.style.display = "none";
+  });
 
-// Evento para el botón de apertura
-closeBtn.addEventListener("click", () => {
-  menu.style.display = "none";
-  closeBtn.style.display = "none";
-  openBtn.style.display = "flex";
+  // Evento para el botón de apertura
+  closeBtn.addEventListener("click", () => {
+    menu.style.display = "none";
+    closeBtn.style.display = "none";
+    openBtn.style.display = "flex";
+  });
 });
