@@ -38,17 +38,25 @@
 		</div>
 
 		<div class="site-policies site-footer">
-			<span class="copyright">© 2023 Start Theme. All rights reserved.</span>
-
-			<div class="policies">
+			<?php 
+			$copyright = get_field('copyright_text', 'option');
+			$footer_links = get_field('links', 'option')
+			?>
+			<?php if(isset($copyright)):?>
+				<span class="copyright"><?php echo $copyright?></span>
+			<?php endif?>
+			
+			<?php if(isset($footer_links)):?>
+				<div class="policies">
 				<nav>
 					<ul>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Terms of Service</a></li>
-						<li><a href="#">Cookies Settings</a></li>
+						<?php foreach($footer_links as $link):?>
+							<li><a href="<?php echo $link['link']['url']?>"><?php echo $link['link']['title']?></a></li> 
+						<?php endforeach?>
 					</ul>
 				</nav>
 			</div>
+			<?php endif?>
 		</div>
 	</div>
 </footer>

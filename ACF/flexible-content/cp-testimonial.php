@@ -15,7 +15,7 @@ $cta = $cp->call_to_action;
                                 <div class="swiper-slide">
                                     <div class="stars">
                                         <?php for ($i = 1; $i <= $item['stars']; $i++): ?>
-                                                <span class="star <?php echo ($i <= $item['stars']) ? 'filled' : ''; ?>">★</span>
+                                            <span class="star <?php echo ($i <= $item['stars']) ? 'filled' : ''; ?>">★</span>
                                         <?php endfor ?>
                                     </div>
                                     <p class="content"><?php echo $item['testimonial-content'] ?></p>
@@ -35,38 +35,4 @@ $cta = $cp->call_to_action;
     </div>
 </section>
 
-
-<script>
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  loop: true,
-  freeMode: false,
-  slidesPerView: 1,
-  spaceBetween: 10,
-  navigation: true,
-  infinite: true,
-  
-    breakpoints: {
-        768:{
-            slidesPerView: 2,
-            spaceBetween: 10,
-        },
-
-        870:{
-            slidesPerView: 3,
-        },
-
-        1024:{
-            slidesPerView: 4,
-        },
-    },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-});
-</script>
 
