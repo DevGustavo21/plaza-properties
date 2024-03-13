@@ -9,6 +9,9 @@
     "WordPress",
     "Theme"
   ],
+  "dependencies": {
+    "swiper": "^11.0.7"
+  },
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
@@ -39,8 +42,5 @@
   },
   "browserslist": [
     "last 2 version"
-  ],
-  "dependencies": {
-    "swiper": "^11.0.7"
-  }
+  ]
 }

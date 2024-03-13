@@ -75,7 +75,11 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 --------------------------------------------------------------*/
 @import "components/components";
 
-@import 'site';
+
+/*--------------------------------------------------------------
+# Site
+--------------------------------------------------------------*/
+@import 'site/single';
 
 /*--------------------------------------------------------------
 # Plugins
@@ -89,5 +93,4 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 @import "utilities/general_utilities";
