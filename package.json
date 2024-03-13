@@ -10,7 +10,6 @@
     "Theme"
   ],
   "dependencies": {
-    "swiper": "^11.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",

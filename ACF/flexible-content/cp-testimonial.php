@@ -35,4 +35,38 @@ $cta = $cp->call_to_action;
     </div>
 </section>
 
+<script type="module">
+    const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: true,
+        freeMode: false,
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: true,
+        infinite: true,
+
+        breakpoints: {
+            768:{
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+
+            870:{
+                slidesPerView: 3,
+            },
+
+            1024:{
+                slidesPerView: 4,
+            },
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+    });
+
+</script>
 
