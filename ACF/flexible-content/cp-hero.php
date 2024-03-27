@@ -21,19 +21,20 @@ $image = $cp->hero_image;
         <?php endif ?>
 
         <div class="buttons">
-          <?php if(isset($call_to_action)):?>
-            <a class="btn-1" href="<?php echo $call_to_action['url']; ?>"><?php echo $call_to_action['title']; ?></a>
-          <?php endif;?>
+  <?php if(isset($call_to_action) && !empty($call_to_action['url']) && !empty($call_to_action['title'])): ?>
+    <a class="btn-1" href="<?php echo htmlspecialchars($call_to_action['url']); ?>"><?php echo htmlspecialchars($call_to_action['title']); ?></a>
+  <?php endif; ?>
 
-          <?php if(isset($second_call_to_action)):?>
-            <a class="btn-2" href="<?php echo $second_call_to_action['url']; ?>"><?php echo $second_call_to_action['title']; ?></a>
-          <?php endif?>
-          </div>
+  <?php if(isset($second_call_to_action) && !empty($second_call_to_action['url']) && !empty($second_call_to_action['title'])): ?>
+    <a href="<?php echo htmlspecialchars($second_call_to_action['url']); ?>" class="btn-2"><?php echo htmlspecialchars($second_call_to_action['title']); ?></a>
+  <?php endif; ?> 
+</div>
+
       </div>
   </div>
   <div class="hero__image box">
     <?php if(isset($image)):?>
       <img src="<?php echo $image['url']?>" alt="<?php echo $image['filename']?>">
-    <?php endif?>
+    <?php endif;?>
   </div>
 </section>
