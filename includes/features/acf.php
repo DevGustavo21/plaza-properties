@@ -11,29 +11,7 @@ const ACF_MODAL = false;
 
 
 /** Use block editor only for page and gutenberg for posts */
-add_filter( 'use_block_editor_for_page', '__return_false', 10 );
-
-
-/** Allow use ACF blocks in gutenberg for posts */
-add_action('acf/init', function(){
-    if (function_exists('acf_register_block_type')){
-        acf_register_block_type(array(
-            'name'            => 'bk_gutenberg-cta',
-            'title'           => 'Call to Action',
-            'description'     => 'Block to add a CTA features',
-            'mode'=> 'edit',
-            'render_template' => get_stylesheet_directory() . '/ACF/blocks/template-blocks/bk_gutenberg-cta.php',
-            'enqueue_style'   => get_stylesheet_directory_uri() . '/assets/sass/components/blocks/_cp-cta.scss',
-            'icon'            => 'dashicons dashicons-align-full-width',
-            "supports" => array (
-                "anchor" => true,
-                "align" => true,
-                "html" => false,
-                "mode" => false
-            ),
-        ));
-    }
-});
+add_filter('use_block_editor_for_page', '__return_false', 10);
 
 
 /** ACF Custom save */
@@ -199,14 +177,14 @@ add_action('admin_notices', 'sp_display_admin_notice');
 function sp_display_admin_notice()
 {
     ?>
-    <?php if (!class_exists('ACF')) : ?>
-    <div class="notice notice-warning">
-        <p>The current theme <code><?php echo esc_html(wp_get_theme()->get('Name')); ?></code> works with Advanced
-            Custom Fields (ACF), please install it.</p>
-    </div>
-<?php endif; ?>
+        <?php if (!class_exists('ACF')): ?>
+            <div class="notice notice-warning">
+                <p>The current theme <code><?php echo esc_html(wp_get_theme()->get('Name')); ?></code> works with Advanced
+                    Custom Fields (ACF), please install it.</p>
+            </div>
+    <?php endif; ?>
 
-    <?php
+        <?php
 }
 
 
@@ -245,23 +223,23 @@ add_action('acf/input/admin_footer', 'sp_apply_acf_modifications');
 function sp_apply_acf_modifications()
 {
     ?>
-    <style>
-        .acf-editor-wrap iframe {
-            min-height: 0;
-        }
-    </style>
-    <script>
-        (function ($) {
-            $('.acf-editor-wrap.delay textarea').css('height', '100px');
-            acf.add_filter('wysiwyg_tinymce_settings', function (mceInit, id, $field) {
-                mceInit.wp_autoresize_on = true;
-                return mceInit;
-            });
-            acf.add_action('wysiwyg_tinymce_init', function (ed, id, mceInit, $field) {
-                ed.settings.autoresize_min_height = 100;
-                $('.acf-editor-wrap iframe').css('height', '100px');
-            });
-        })(jQuery)
-    </script>
-    <?php
+        <style>
+            .acf-editor-wrap iframe {
+                min-height: 0;
+            }
+        </style>
+        <script>
+            (function ($) {
+                $('.acf-editor-wrap.delay textarea').css('height', '100px');
+                acf.add_filter('wysiwyg_tinymce_settings', function (mceInit, id, $field) {
+                    mceInit.wp_autoresize_on = true;
+                    return mceInit;
+                });
+                acf.add_action('wysiwyg_tinymce_init', function (ed, id, mceInit, $field) {
+                    ed.settings.autoresize_min_height = 100;
+                    $('.acf-editor-wrap iframe').css('height', '100px');
+                });
+            })(jQuery)
+        </script>
+        <?php
 }
