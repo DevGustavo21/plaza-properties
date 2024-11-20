@@ -13,7 +13,8 @@ bower_components
 *.sql
 *.sqlite
 *.env
-/dist
+*/dist
+
 logs
 npm-debug.log*
 
