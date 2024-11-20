@@ -8,9 +8,9 @@ module.exports = merge(commonConfig, {
   devtool: 'inline-source-map',
   plugins: [
     new BrowserSyncPlugin({
-      host: 'plaza-properties.local',
+      host: 'plaza-properties-net.local',
       port: 3000,
-      proxy: 'http://plaza-properties.local',
+      proxy: 'http://plaza-properties-net.local',
       open: true
     })
   ]
