@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once 'includes/base/scripts-and-styles.php';
 
