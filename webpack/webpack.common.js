@@ -1,14 +1,15 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const static_path = "../plaza-theme/assets/";
-
 module.exports = {
   target: "web",
-  entry: [`${static_path}/js/index.js`, `${static_path}/sass/index.scss`],
+  entry: [
+    "../plaza-theme/assets/js/index.js",
+    "../plaza-theme/assets/sass/index.scss",
+  ],
   output: {
     path: path.resolve(__dirname, "../dist/"),
-    publicPath: "/dist/",
+    publicPath: "../dist/",
     filename: "js/[name].js",
   },
   plugins: [
@@ -35,6 +36,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
+          "sass-loader",
           "postcss-loader",
           {
             loader: "sass-loader",

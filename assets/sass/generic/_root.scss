@@ -1,0 +1,69 @@
+/*
+Theme Name: Plaza Properties Theme
+Theme URI: http://example.com/plaza-theme
+Author: Tu Nombre
+Author URI: http://example.com
+Description: Una breve descripción de tu tema.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: plaza-properties-theme
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0 !important;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+$bp-sm: 36em;
+$bp-md: 48em;
+$bp-lg: 76rem;
+$bp-xl: 80rem;
+$bp-xxl: 90rem;
+$bp-xxxl: 125rem;
+
+
+:root {
+    // FONTS FAMILY
+    --ff-primary: "Coldiac Free Regular";
+    --ff-secondary: "Montserrat", serif;
+
+    //COLORS
+
+    --c-body: #fff;
+    --c-primary: #67723A;
+    --c-accent-text: #737751;
+    --c-accent-text-2: #4D4C4B;
+    --c-primary-text: #1E1E1E;
+    --c-light-text: #F5EDE3;
+    --c-black-text: #000000;
+    --c-brown: #8C6E4B;
+
+
+    //TRANSITION CONTROL
+
+    --t-md: 300ms;
+}
+
+* {
+    font-family: var(--ff-primary);
+}

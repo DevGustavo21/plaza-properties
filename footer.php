@@ -1,4 +1,10 @@
-    <!-- Site Footer -->
+<?php 
+$footer_logo = get_field('footer_logo', 'option');
+// var_dump($footer_logo)
+?>
+  
+  
+  <!-- Site Footer -->
     <footer id="site-footer">
         Footer
     </footer>
