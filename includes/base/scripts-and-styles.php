@@ -12,21 +12,21 @@ add_action('wp_enqueue_scripts', 'starter_theme_scripts');
 
 
 /** Disabled Gutenberg Blocks edit only pages */
-// add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);
-// function prefix_disable_gutenberg($current_status, $post_type)
-// {
-//     if ('page' === $post_type) {
-//         return false;
-//     }
-//     return $current_status;
-// }
+add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);
+function prefix_disable_gutenberg($current_status, $post_type)
+{
+    if ('page' === $post_type) {
+        return false;
+    }
+    return $current_status;
+}
 
-// /** Disabled HTML editor */
-// add_action('init', 'my_remove_editor_from_post_type');
-// function my_remove_editor_from_post_type()
-// {
-//     remove_post_type_support('page', 'editor');
-// }
+/** Disabled HTML editor */
+add_action('init', 'my_remove_editor_from_post_type');
+function my_remove_editor_from_post_type()
+{
+    remove_post_type_support('page', 'editor');
+}
 
 /** Allow SVG files */
 function enable_svg_upload($upload_mimes)

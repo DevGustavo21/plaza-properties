@@ -1,0 +1,107 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-block: 16px;
+    background: linear-gradient(180deg, rgba(64, 43, 18, 0.5) 0%, rgba(91, 66, 37, 0.45) 100%);
+    backdrop-filter: blur(10px);
+    color: var(--c-body);
+
+    &__wrapper {
+        max-width: 1440px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+
+        &-logo {
+            width: 180px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        &-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            width: 100%;
+
+            @media (max-width: 1024px) {
+                gap: 24px;
+                display: none;
+            }
+
+            &-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 48px;
+                font-family: var(--ff-secondary);
+
+                @media (max-width: 1024px) {
+                    gap: 24px;
+                }
+
+                .current_page_item {
+                    text-decoration: underline;
+                    text-decoration-color: var(--c-body);
+                    text-underline-offset: 3px;
+
+                    a {
+                        opacity: 1;
+                        color: var(--c-body);
+                    }
+                }
+
+                li {
+                    font-size: 14px;
+                    font-weight: 600;
+
+                    a {
+                        color: var(--c-body);
+                        opacity: 0.5;
+                        transition: var(--t-md);
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            &-buttons {
+                display: flex;
+                align-items: center;
+                gap: 48px;
+
+                @media (max-width: 1024px) {
+                    gap: 24px;
+                }
+
+                &-btn {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    padding: 12px 16px;
+                    border: 1px solid var(--c-body);
+                    font-family: var(--ff-secondary);
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--c-body);
+                    opacity: 0.6;
+                    border-radius: 6px;
+                    transition: var(--t-md);
+                    text-align: center;
+
+                    &:hover {
+                        opacity: 1;
+                        background-color: var(--c-accent-text);
+                    }
+                }
+            }
+        }
+    }
+}
