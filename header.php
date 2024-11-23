@@ -23,7 +23,7 @@
     <link href="https://db.onlinewebfonts.com/c/7520a52bbfcfbc6ab8cd9aa5a35bf35b?family=Coldiac+Free+Regular" rel="stylesheet">                
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> style="position:relative">
     <?php wp_body_open(); ?>
 
     <?php get_template_part('template-parts/header/header-normal'); ?>
