@@ -37,6 +37,10 @@
                 max-width: 100%;
             }
 
+            @media (max-width: 425px) {
+                align-items: center;
+            }
+
             &-permalink {
                 &-image {
                     max-width: 160px;
@@ -58,6 +62,10 @@
                 gap: 10px;
                 color: var(--c-light-text);
 
+                @media (max-width: 425px) {
+                    text-align: center;
+                }
+
                 &-title {
                     font-weight: 400;
                     font-size: 20px;
@@ -76,6 +84,10 @@
                     color: var(--c-light-text);
                     text-underline-offset: 3px;
                     transition: var(--t-md);
+
+                    @media (max-width: 425px) {
+                        margin: 0 auto;
+                    }
 
                     &:hover {
                         color: var(--c-body);
@@ -110,22 +122,29 @@
                 gap: 10px;
                 color: var(--c-light-text);
 
+                @media (max-width: 425px) {
+                    width: 100%;
+                    align-items: center;
+                }
+
                 &-title {
                     font-weight: 400;
                     font-size: 20px;
-                }
 
-                &-address {
-                    font-size: 14px;
-                    line-height: 21px;
-                    font-weight: 400;
-                    font-style: normal;
+                    @media (max-width: 425px) {
+                        align-items: center;
+                    }
                 }
 
                 &-list {
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
+
+                    @media (max-width: 425px) {
+                        align-items: center;
+                        text-align: center;
+                    }
 
                     &-item {
                         font-weight: 600;
@@ -153,6 +172,10 @@
                 gap: 10px;
                 color: var(--c-light-text);
 
+                @media (max-width: 425px) {
+                    text-align: center;
+                }
+
                 &-title {
                     font-weight: 400;
                     font-size: 20px;
@@ -170,6 +193,10 @@
                     flex-direction: column;
                     gap: 18px;
                     margin-top: 6px;
+
+                    @media (max-width: 425px) {
+                        align-items: center;
+                    }
 
                     &-item {
                         font-weight: 400;
