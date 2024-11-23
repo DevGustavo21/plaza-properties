@@ -1,7 +1,194 @@
-#site-footer{
+.site-footer {
     background-color: var(--c-primary);
+    padding-block: 90px;
 
-    @include m_query($bp-md){
-        background-color: var(--c-brown);
+    @media (max-width: 768px) {
+        padding-block: 40px;
+    }
+
+    &__wrapper {
+        max-width: 1440px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        @media (max-width: 425px) {
+            gap: 40px;
+        }
+
+        &-info {
+            flex: 1;
+            max-width: 550px;
+            display: flex;
+            gap: 25px;
+            align-items: start;
+
+            @media (max-width: 1024px) {
+                flex-direction: column;
+            }
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+            }
+
+            &-permalink {
+                &-image {
+                    max-width: 160px;
+                    transition: var(--t-md);
+
+                    @media (max-width: 425px) {
+                        max-width: 100%;
+                    }
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+            }
+
+            &-about {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                color: var(--c-light-text);
+
+                &-title {
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+
+                &-subtitle {
+                    font-size: 14px;
+                    line-height: 21px;
+                    font-weight: 400;
+                }
+
+                &-cta {
+                    width: fit-content;
+                    font-size: 14px;
+                    text-decoration: underline;
+                    color: var(--c-light-text);
+                    text-underline-offset: 3px;
+                    transition: var(--t-md);
+
+                    &:hover {
+                        color: var(--c-body);
+                    }
+                }
+            }
+        }
+
+        &-links {
+            flex: 1;
+            max-width: 550px;
+            display: flex;
+            gap: 25px;
+            align-items: start;
+            justify-content: end;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                max-width: 100%;
+                justify-content: space-between;
+            }
+
+            @media (max-width:425px) {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            &-link {
+                display: flex;
+                min-width: 170px;
+                flex-direction: column;
+                gap: 10px;
+                color: var(--c-light-text);
+
+                &-title {
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+
+                &-address {
+                    font-size: 14px;
+                    line-height: 21px;
+                    font-weight: 400;
+                    font-style: normal;
+                }
+
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    &-item {
+                        font-weight: 600;
+                        font-size: 14px;
+
+                        a {
+                            color: var(--c-light-text);
+                            transition: var(--t-md);
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            &:hover {
+                                color: var(--c-body);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-contact {
+                display: flex;
+                min-width: 170px;
+                flex-direction: column;
+                gap: 10px;
+                color: var(--c-light-text);
+
+                &-title {
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+
+                &-address {
+                    font-size: 14px;
+                    line-height: 21px;
+                    font-weight: 400;
+                    font-style: normal;
+                }
+
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 18px;
+                    margin-top: 6px;
+
+                    &-item {
+                        font-weight: 400;
+                        font-size: 14px;
+
+                        a {
+                            color: var(--c-light-text);
+                            transition: var(--t-md);
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            &:hover {
+                                color: var(--c-body);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
