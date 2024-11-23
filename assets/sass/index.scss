@@ -1,5 +1,17 @@
-@import "./abstracts/abstracts";
-@import "./components/components";
-@import "./generic/generic";
-@import './layouts/footer';
-@import './layouts/header';
+/*!
+Theme Name: plaza Theme
+Theme URI: plaza-theme
+Author: plaza Theme
+Description: plaza Theme
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: plaza-theme
+*/
+
+@use "abstracts/abstracts";
+@use "components/components";
+@use "generic/generic";
+@use "layouts/layouts";
