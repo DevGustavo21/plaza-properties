@@ -1,0 +1,105 @@
+.about {
+    padding-block: 64px !important;
+
+    &__wrapper {
+        max-width: 1440px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+
+        @media (max-width: 1024px) {
+            gap: 30px;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex: 1;
+
+            @media (max-width: 768px) {
+                gap: 12px;
+                align-items: center;
+                text-align: center;
+            }
+
+            &-subtitle {
+                font-family: var(--ff-primary);
+                font-size: 18px;
+                font-weight: 400;
+                color: var(--c-accent-text);
+                text-transform: uppercase;
+                letter-spacing: 2.5px;
+
+                @media (max-width: 425px) {
+                    font-size: 14px;
+                }
+            }
+
+            &-title {
+                font-size: 56px;
+                font-family: var(--ff-primary);
+                line-height: 62px;
+                font-weight: 400;
+                letter-spacing: 2.5px;
+                color: var(--c-accent-text);
+                text-transform: uppercase;
+
+                @media (max-width: 768px) {
+                    font-size: 40px;
+                    line-height: 46px;
+                }
+
+                @media (max-width: 425px) {
+                    font-size: 36px;
+                    line-height: 40px;
+                }
+            }
+
+            &-description {
+                margin-top: 16px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                @media (max-width: 768px) {
+                    margin-top: 12px;
+                }
+
+                @media (max-width:425px) {
+                    margin: 0;
+                }
+
+                p {
+                    color: var(--c-primary-text);
+                    font-family: var(--ff-secondary);
+                    font-size: 18px;
+                    line-height: 28px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &-image {
+            flex: 1;
+            max-width: 50%;
+            width: 100%;
+            object-fit: cover;
+
+            @media (max-width: 1024px) {
+                max-width: 100%;
+                max-height: 400px;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
+        }
+    }
+}
