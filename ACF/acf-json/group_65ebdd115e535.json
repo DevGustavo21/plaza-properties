@@ -376,6 +376,70 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_67435cab41ddb": {
+                    "key": "layout_67435cab41ddb",
+                    "name": "cp_slider",
+                    "label": "cp slider",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67435cb541ddf",
+                            "label": "cp slider",
+                            "name": "cp_slider",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67435c38a47ba"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6743b93312497": {
+                    "key": "layout_6743b93312497",
+                    "name": "cp_slider-reviews",
+                    "label": "cp slider reviews",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6743b93f1249a",
+                            "label": "cp slider reviews",
+                            "name": "cp_slider-reviews",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6743b81d2dde1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -403,5 +467,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732386826
+    "modified": 1732491606
 }

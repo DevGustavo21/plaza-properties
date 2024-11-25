@@ -1,9 +1,9 @@
 {
-    "key": "group_673fa7f289ef9",
+    "key": "group_673f9d80f0ca8",
     "title": "cp-hero",
     "fields": [
         {
-            "key": "field_6742dc943962f",
+            "key": "field_673f9d8182230",
             "label": "background image",
             "name": "background_image",
             "aria-label": "",
@@ -29,9 +29,9 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_673fa7f297a8f",
-            "label": "Hero Title",
-            "name": "hero_title",
+            "key": "field_673f9dfb82231",
+            "label": "title hero",
+            "name": "title_hero",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -50,9 +50,9 @@
             "append": ""
         },
         {
-            "key": "field_6742db31177c8",
-            "label": "hero subtitle",
-            "name": "hero_subtitle",
+            "key": "field_673f9e0382232",
+            "label": "subtitle hero",
+            "name": "subtitle_hero",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -71,9 +71,9 @@
             "append": ""
         },
         {
-            "key": "field_6742db4e177c9",
-            "label": "enable dropdown",
-            "name": "enable_dropdown",
+            "key": "field_673f9e1282233",
+            "label": "active dropdown",
+            "name": "active_dropdown",
             "aria-label": "",
             "type": "radio",
             "instructions": "",
@@ -92,7 +92,7 @@
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "allow_in_bindings": 1,
+            "allow_in_bindings": 0,
             "layout": "vertical",
             "save_other_choice": 0
         }
@@ -115,5 +115,5 @@
     "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732435113
+    "modified": 1732308548
 }
