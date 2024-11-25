@@ -6,7 +6,7 @@ $enableDropdown = $cp->enable_dropdown;
 $backgroundImage = $cp->background_image;
 ?>
 
-<div class="container--hero-banner">
+<section class="container--hero-banner container_wrapper">
     <div class="container--hero-image">
         <?php if ($backgroundImage): ?>
             <img src="<?php echo $backgroundImage ?>" alt="hero-banner-image">
@@ -29,4 +29,4 @@ $backgroundImage = $cp->background_image;
             </div>
         <?php endif; ?>
     </div>
-</div>
+</section>

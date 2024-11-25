@@ -12,8 +12,6 @@
       text-align: center;
       font-weight: 400;
       color: var(--c-primary);
-
-
     }
 
     h3 {
@@ -22,7 +20,8 @@
       line-height: 59px;
       text-align: center;
       font-weight: 400;
-      color: black;
+      color: var(--c-black-text);
+
       @media (max-width: 425px) {
         font-size: 36px;
         line-height: 39px;
@@ -35,8 +34,7 @@
       line-height: 28px;
       text-align: center;
       font-weight: 400;
-      color: black;
-
+      color: var(--c-black-text);
     }
   }
 
@@ -53,15 +51,15 @@
         padding-block-end: 16px;
       }
 
-
       span {
         display: block;
         font-family: var(--ff-secondary);
         font-size: 24px;
         line-height: 29px;
-        font-weight: 400;
+        font-weight: 500;
         text-align: center;
-        color: black;
+        color: var(--c-black-text);
+        padding-inline: 20px;
       }
     }
   }
@@ -72,14 +70,15 @@
     font-family: var(--ff-secondary);
     font-size: 14px;
     line-height: 17px;
-    font-weight: 400;
-    color: black;
+    font-weight: 600;
+    color: var(--c-black-text);
     margin-block-start: 32px;
     margin-block-end: 64px;
 
-    .swiper-button-prev, .swiper-button-next {
+    .swiper-button-prev,
+    .swiper-button-next {
       z-index: 999;
-      color: #8C6E4B;
+      color: var(--c-brown);
 
       &:after {
         font-size: 26px;
