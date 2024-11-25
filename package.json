@@ -1,37 +1,39 @@
 {
-    "name": "plaza-properties",
-    "version": "1.0.0",
-    "description": "Started theme for Plaza Properties",
-    "main": "index.js",
-    "author": "Plaza Properties",
-    "license": "GPL-2.0-or-later",
-    "keywords": [],
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "webpack --config webpack/webpack.dev.js --watch",
-        "build": "webpack --config webpack/webpack.prod.js"
-    },
-    "browserslist": [
-        "last 2 version"
-    ],
-    "dependencies": {
-        "style-loader": "^4.0.0",
-        "swiper": "^11.1.4"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.24.7",
-        "@babel/preset-env": "^7.24.7",
-        "babel-loader": "^9.1.3",
-        "browser-sync-webpack-plugin": "^2.3.0",
-        "browsersync": "^0.0.1-security",
-        "css-loader": "^7.1.2",
-        "mini-css-extract-plugin": "^2.9.2",
-        "postcss-loader": "^8.1.1",
-        "postcss-preset-env": "^9.5.15",
-        "sass": "^1.81.0",
-        "sass-loader": "^13.3.3",
-        "terser-webpack-plugin": "^5.3.10",
-        "webpack": "^5.92.1",
-        "webpack-cli": "^5.1.4"
-    }
+  "name": "plaza-properties",
+  "version": "1.0.0",
+  "description": "Started theme for Plaza Properties",
+  "main": "index.js",
+  "author": "Plaza Properties",
+  "license": "GPL-2.0-or-later",
+  "keywords": [],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --config webpack/webpack.dev.js --watch",
+    "build": "webpack --config webpack/webpack.prod.js"
+  },
+  "browserslist": [
+    "last 2 version"
+  ],
+  "dependencies": {
+    "style-loader": "^4.0.0",
+    "swiper": "^11.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "babel-loader": "^9.2.1",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "browsersync": "^0.0.1-security",
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.15",
+    "sass": "^1.81.0",
+    "sass-loader": "^13.3.3",
+    "terser-webpack-plugin": "^5.3.10",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  }
 }

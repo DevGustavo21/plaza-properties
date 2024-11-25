@@ -8,14 +8,16 @@ $slidesInformation = $cp->slides_information;
 <div class="container--slide-section">
     <div class="container--slide-information container_wrapper">
         <?php if ($subTitleSection): ?>
-            <h4><?php echo $subTitleSection ?></h4>
+            <h3 class="container--slide-information-subtitle"><?php echo $subTitleSection ?></h3>
         <?php endif; ?>
         <?php if ($titleSection): ?>
-            <h3><?php echo $titleSection ?></h3>
+            <h4 class="container--slide-information-title"><?php echo $titleSection ?></h4>
         <?php endif; ?>
 
         <?php if ($informationSection): ?>
-            <?php echo $informationSection ?>
+            <div class="container--slide-information-description">    
+                <?php echo $informationSection ?>
+            </div>
         <?php endif; ?>
     </div>
 

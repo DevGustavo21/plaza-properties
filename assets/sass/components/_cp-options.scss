@@ -1,6 +1,14 @@
 .options {
     padding-block: 32px;
     background-color: var(--c-primary);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9;
+
+    @media (max-width: 768px){
+        display: none!important;
+    }
 
     &__wrapper {
         max-width: 1440px;

@@ -556,6 +556,186 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6744ad59e37fa": {
+                    "key": "layout_6744ad59e37fa",
+                    "name": "cp-slider-reviews",
+                    "label": "Slider Reviews",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6744ad59e37fd",
+                            "label": "CONTENT",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 1,
+                            "selected": 0
+                        },
+                        {
+                            "key": "field_6744ad59e37fe",
+                            "label": "Slider Reviews",
+                            "name": "slider_reviews",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6743b81d2dde1"
+                            ],
+                            "display": "seamless",
+                            "layout": "table",
+                            "prefix_label": 1,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6744ad59e37ff",
+                            "label": "<span class=\"icon-acf icon-settings icon-small\"><\/span>",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0
+                        },
+                        {
+                            "key": "field_6744ad59e3800",
+                            "label": "Settings",
+                            "name": "settings",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_65e7a012741a2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6744b7dd66704": {
+                    "key": "layout_6744b7dd66704",
+                    "name": "cp-two-columns",
+                    "label": "Two Columns",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6744b7dd66707",
+                            "label": "CONTENT",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 1,
+                            "selected": 0
+                        },
+                        {
+                            "key": "field_6744b7dd66708",
+                            "label": "Two Columns",
+                            "name": "two_columns",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6743f85b5cc13"
+                            ],
+                            "display": "seamless",
+                            "layout": "table",
+                            "prefix_label": 1,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6744b7dd66709",
+                            "label": "<span class=\"icon-acf icon-settings icon-small\"><\/span>",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0,
+                            "selected": 0
+                        },
+                        {
+                            "key": "field_6744b7dd6670a",
+                            "label": "Settings",
+                            "name": "settings",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_65e7a012741a2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -583,5 +763,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732548804
+    "modified": 1732556800
 }

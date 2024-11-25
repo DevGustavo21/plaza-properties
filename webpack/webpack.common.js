@@ -4,8 +4,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   target: "web",
   entry: [
-    "../plaza-properties/assets/js/index.js",
-    "../plaza-properties/assets/sass/index.scss",
+    "../plaza-theme/assets/js/index.js",
+    "../plaza-theme/assets/sass/index.scss",
   ],
   output: {
     path: path.resolve(__dirname, "../dist/"),
