@@ -8,34 +8,34 @@ $slidesInformation = $cp->slides_information;
 <div class="container--slide-section">
     <div class="container--slide-information container_wrapper">
         <?php if ($subTitleSection): ?>
-                <h4><?php echo $subTitleSection ?></h4>
+            <h4><?php echo $subTitleSection ?></h4>
         <?php endif; ?>
         <?php if ($titleSection): ?>
-                <h3><?php echo $titleSection ?></h3>
+            <h3><?php echo $titleSection ?></h3>
         <?php endif; ?>
 
         <?php if ($informationSection): ?>
-                <?php echo $informationSection ?>
+            <?php echo $informationSection ?>
         <?php endif; ?>
     </div>
 
     <?php if (sizeof($slidesInformation) > 0): ?>
-            <div class="swiper mySwiperGallery container--slide-items">
-                <div class="swiper-wrapper">
-                    <?php foreach ($slidesInformation as $item): ?>
-                            <div class="swiper-slide container--slide-items-info">
-                                <img src="<?php echo $item['slide_image'] ?>" alt="image slider">
-                                <span><?php echo $item['title_image'] ?></span>
-                            </div>
+        <div class="swiper mySwiperGallery container--slide-items">
+            <div class="swiper-wrapper">
+                <?php foreach ($slidesInformation as $item): ?>
+                    <div class="swiper-slide container--slide-items-info">
+                        <img src="<?php echo $item['slide_image'] ?>" alt="image slider">
+                        <span><?php echo $item['title_image'] ?></span>
+                    </div>
 
-                    <?php endforeach; ?>
-                </div>
-                <div class="swiper-navigation">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+                <?php endforeach; ?>
             </div>
+            <div class="swiper-navigation">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
     <?php endif; ?>
 
 </div>
@@ -46,6 +46,7 @@ $slidesInformation = $cp->slides_information;
     var swiper = new Swiper(".mySwiperGallery", {
         centeredSlides: true,
         initialSlide: 1,
+        spaceBetween: 32,
         pagination: {
             el: ".swiper-pagination",
             type: "custom",
@@ -78,10 +79,10 @@ $slidesInformation = $cp->slides_information;
 
                 this.slides.forEach(slide => {
                     slide.classList.remove('inactive-slide');
-                    slide.style.opacity = 1; 
+                    slide.style.opacity = 1;
                     const img = slide.querySelector('img');
                     if (img) {
-                        img.style.height = ''; 
+                        img.style.height = '';
                     }
                 });
 
