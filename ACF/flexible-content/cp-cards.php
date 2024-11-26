@@ -2,9 +2,10 @@
 $cards_subtitle = $cp->cards_subtitle;
 $cards_title = $cp->cards_title;
 $cards_items = $cp->cards_items;
+$id = $cp->section_id;
 ?>
 
-<section class="cards container_wrapper">
+<section class="cards container_wrapper" <?php echo $id ? "id=\"$id\"" : ""; ?>>
     <div class="cards__wrapper">
         <?php if(!empty($cards_subtitle) || !empty($cards_title)):?>
             <div class="cards__wrapper-info">

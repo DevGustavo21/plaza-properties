@@ -3,9 +3,10 @@ $about_subtitle = $cp->about_subtitle;
 $about_title = $cp->about_title;
 $about_description = $cp->about_description;
 $about_image = $cp->about_image;
+$id = $cp->section_id;
 ?>
 
-<section class="about container_wrapper">
+<section class="about container_wrapper" <?php echo $id ? "id=\"$id\"" : ""; ?>>
     <div class="about__wrapper">
         <div class="about__wrapper-info">
             <?php if(!empty($about_subtitle)):?>

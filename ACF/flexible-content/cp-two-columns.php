@@ -5,9 +5,10 @@ $subTitleSection = $cp->subtitle_section;
 $informationSection = $cp->information_section;
 $ctaLink = $cp->cta_link;
 $imageSection = $cp->image_section;
+$id = $cp->section_id;
 ?>
 
-<div class="container--two-columns">
+<div class="container--two-columns" <?php echo $id ? "id=\"$id\"" : ""; ?>>
     <div class="container--two-columns-info container_wrapper">
         <div class="container-image">
             <?php if ($imageSection): ?>

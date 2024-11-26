@@ -65,3 +65,7 @@ $bp-xxxl: 125rem;
 * {
     font-family: var(--ff-secondary);
 }
+
+html {
+    scroll-behavior: smooth !important;
+}

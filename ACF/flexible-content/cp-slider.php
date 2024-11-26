@@ -3,9 +3,10 @@ $subTitleSection = $cp->subtitle_section;
 $titleSection = $cp->title_section;
 $informationSection = $cp->information_section;
 $slidesInformation = $cp->slides_information;
+$id = $cp->section_id;
 ?>
 
-<div class="container--slide-section">
+<div class="container--slide-section" <?php echo $id ? "id=\"$id\"" : ""; ?>>
     <div class="container--slide-information container_wrapper">
         <?php if ($subTitleSection): ?>
             <h3 class="container--slide-information-subtitle"><?php echo $subTitleSection ?></h3>

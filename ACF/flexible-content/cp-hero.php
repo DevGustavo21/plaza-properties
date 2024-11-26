@@ -4,9 +4,10 @@ $titleHero = $cp->hero_title;
 $subTitleHero = $cp->hero_subtitle;
 $enableDropdown = $cp->enable_dropdown;
 $backgroundImage = $cp->background_image;
+$id = $cp->section_id;
 ?>
 
-<section class="container--hero-banner container_wrapper">
+<section class="container--hero-banner container_wrapper" <?php echo $id ? "id=\"$id\"" : ""; ?>>
     <div class="container--hero-image">
         <?php if ($backgroundImage): ?>
             <img src="<?php echo $backgroundImage ?>" alt="hero-banner-image">

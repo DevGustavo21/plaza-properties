@@ -3,9 +3,10 @@ $text_media_image = $cp->text_media_image;
 $text_media_subtitle = $cp->text_media_subtitle;
 $text_media_title = $cp->text_media_title;
 $text_media_description = $cp->text_media_description;
+$id = $cp->section_id;
 ?>
 
-<section class="text-media container_wrapper">
+<section class="text-media container_wrapper" <?php echo $id ? "id=\"$id\"" : ""; ?>>
     <div class="text-media__wrapper">
         <img src="<?php echo $text_media_image['url']?>" alt="<?php echo $text_media_image['name']?>" class="text-media__wrapper-image">
 
